@@ -47,41 +47,17 @@
           <ul class="treeview-menu">
             <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Data Admin</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/master/jam') ?>"> <i class="fa fa-clock-o mr-1"></i>Data Jam</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/bagian') ?>"> <i class="fa fa-star mr-1"></i>Data Bagian</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/karyawan') ?>"> <i class="fa fa-user mr-1"></i>Data Karyawan</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/jenismobil') ?>"> <i class="fa fa-caret-square-o-right mr-1"></i>Data Jenis Mobil</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/mobil') ?>"> <i class="fa fa-car mr-1"></i>Data Mobil</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/lapangan') ?>"> <i class="fa fa-futbol-o mr-1"></i>Data Lapangan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/penyewa') ?>"> <i class="fa fa-users mr-1"></i>Data Penyewa</a></li>
+
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="fa fa-envelope-o mr-2"></i> <span>Sosial Media</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="fa fa-retweet mr-2"></i> <span>Data Penyewaan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li class="ml-4"><a href="<?php echo base_url('admin/email/email') ?>"> <i class="fa fa-envelope-o mr-1"></i>Data Email</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/email/facebook') ?>"> <i class="fa fa-facebook-official mr-1"></i>Facebook</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/email/instagram') ?>"> <i class="fa fa-instagram mr-1"></i>Instagram</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/email/hosting') ?>"> <i class="fa fa-server mr-1"></i>Hosting Domain</a></li>
-
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"> <i class="fa fa-snowflake-o mr-2"></i> <span>Lowongan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/lowongan/pengiklan') ?>"> <i class="fa fa-address-card mr-1"></i>Data Pengiklan</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/lowongan/bank') ?>"> <i class="fa fa-credit-card mr-1"></i>Bank</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/lowongan/web') ?>"> <i class="fa fa-building-o mr-1"></i>Web</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/email/instagram') ?>"> <i class="fa fa-instagram mr-1"></i>Instagram</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/email/hosting') ?>"> <i class="fa fa-server mr-1"></i>Hosting Domain</a></li>
-
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"><i class="fa fa-slack mr-2" aria-hidden="true"></i><span>Input Gaji</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/gaji') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Input Gaji</a></li>
-
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"><i class="fa fa-wpexplorer mr-2" aria-hidden="true"></i><span>Input Absensi</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/absensi') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Input Kehadiran</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/absensi') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Kehadiran</a></li>
 
           </ul>
         </li>
@@ -99,7 +75,7 @@
 
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="fa fa-file-pdf-o mr-2"></i><span>Laporan Gaji</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="fa fa-file-pdf-o mr-2"></i><span>Laporan Penyewaan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lgaji') ?>"> <i class="fa fa-history mr-1"></i>Gaji Karyawan</a></li>
           </ul>
