@@ -60,7 +60,7 @@
         <div class="col-lg-3 col-xs-6">
           <a href="<?php echo base_url('admin/master/penyewa') ?>">
             <div class="info-box"> <span class="info-box-icon bg-red"><i class="fa fa-users" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number "> Penyewa </span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_mobil")->num_rows() ?> </span></div>
+              <div class="info-box-content"> <span class="info-box-number "> Penyewa </span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_penyewa")->num_rows() ?> </span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
