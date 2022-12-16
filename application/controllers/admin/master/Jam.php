@@ -56,6 +56,7 @@ class Jam extends CI_Controller
     $data = array(
       'jam' => $this->input->post('jam'),
       'kd_jam' => $this->input->post('kd_jam'),
+      'hargasewa_lapangan' => $this->input->post('hargasewa_lapangan'),
       // 'foto_jam' => $image['file_name'],
     );
     $this->Mglobal->tambahdata($data, 'tbl_jam');
@@ -121,6 +122,7 @@ class Jam extends CI_Controller
     $where = array('kd_jam' => $this->input->post('kd_jam'));
     $data = array(
       'jam' => $this->input->post('jam'),
+      'hargasewa_lapangan' => $this->input->post('hargasewa_lapangan'),
       // 'foto_jam' => $image['file_name'],
       //  'password_jam'=>md5($this->input->post('password_jam'))
     );

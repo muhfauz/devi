@@ -56,7 +56,7 @@ class Lapangan extends CI_Controller
     $data = array(
       'nama_lapangan' => $this->input->post('nama_lapangan'),
       'kd_lapangan' => $this->input->post('kd_lapangan'),
-      'hargasewa_lapangan' => $this->input->post('hargasewa_lapangan'),
+
 
 
 
@@ -126,7 +126,7 @@ class Lapangan extends CI_Controller
     $where = array('kd_lapangan' => $this->input->post('kd_lapangan'));
     $data = array(
       'nama_lapangan' => $this->input->post('nama_lapangan'),
-      'hargasewa_lapangan' => $this->input->post('hargasewa_lapangan'),
+
 
 
       // 'ket_lapangan' => $this->input->post('ket_lapangan'),

@@ -26,6 +26,7 @@
                             <th class="text-center text-white" width="10px">No</th>
                             <th class="text-center text-white">Kode Jam</th>
                             <th class="text-center text-white">Jam</th>
+                            <th class="text-center text-white">Harga Sewa Lapangan</th>
 
                             <th class="text-center text-white" width="300px"></th>
 
@@ -39,6 +40,7 @@
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
                                 <td><?php echo $a->kd_jam ?></td>
                                 <td><?php echo $a->jam ?></td>
+                                <td><?php echo number_format($a->hargasewa_lapangan) ?></td>
 
                                 <!-- <td><img src="<?php echo base_url('assets/toko/images/jam/') . $a->foto_jam ?>" alt=""> -->
                                 </td>
@@ -78,6 +80,10 @@
                         <label for="">Jam</label>
                         <input name="jam" type="text" class="form-control" required>
                     </div>
+                    <div class="form-group">
+                        <label for="">Harga Sewa Lapangan</label>
+                        <input name="hargasewa_lapangan" type="text" class="form-control" required>
+                    </div>
                     <!-- <div class="form-group">
                         <label for="">Foto jam</label>
                         <input name="foto_jam" type="file" class="form-control" required>
@@ -111,6 +117,10 @@
                         <tr>
                             <th>Jam</th>
                             <td><?php echo $a->jam ?></td>
+                        </tr>
+                        <tr>
+                            <th>Harga Sewa Lapangan</th>
+                            <td><?php echo $a->hargasewa_lapangan ?></td>
                         </tr>
                         <!-- <tr>
                             <th>Foto jam</th>
@@ -189,6 +199,11 @@
                             <label for="">Jam</label>
                             <input name="jam" type="text" class="form-control" value="<?php echo $a->jam ?>" required>
                             <input name="kd_jam" type="hidden" class="form-control" value="<?php echo $a->kd_jam ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Harga Sewa Lapangan</label>
+                            <input name="hargasewa_lapangan" type="text" class="form-control" value="<?php echo $a->hargasewa_lapangan ?>" required>
+
                         </div>
                         <!-- <div class="form-group">
                             <label for="">Foto jam</label>

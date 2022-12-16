@@ -50,7 +50,7 @@
         <div class="col-lg-3 col-xs-6">
           <a href="<?php echo base_url('admin/master/lapangan') ?>">
             <div class="info-box"> <span class="info-box-icon bg-black"><i class="fa fa-futbol-o"></i></span>
-              <div class="info-box-content"> <span class="info-box-number">Lapangan</span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_karyawan")->num_rows() ?> lapangan </span></div>
+              <div class="info-box-content"> <span class="info-box-number">Lapangan</span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_lapangan")->num_rows() ?> lapangan </span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->

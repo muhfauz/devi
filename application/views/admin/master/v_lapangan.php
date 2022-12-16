@@ -26,7 +26,7 @@
                             <th class="text-center text-white" width="10px">No</th>
                             <th class="text-center text-white">Kode lapangan</th>
                             <th class="text-center text-white">Nama lapangan</th>
-                            <th class="text-center text-white">Harga Sewa / Jam</th>
+
 
                             <!-- <th class="text-center text-white">Foto</th> -->
                             <th class="text-center text-white" width="300px"></th>
@@ -41,7 +41,7 @@
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
                                 <td><?php echo $a->kd_lapangan ?></td>
                                 <td><?php echo $a->nama_lapangan ?></td>
-                                <td><?php echo $a->hargasewa_lapangan ?></td>
+
 
                                 <!-- <td><img src="<?php echo base_url('assets/toko/images/lapangan/') . $a->foto_lapangan ?>" alt=""> -->
                                 </td>
@@ -81,10 +81,7 @@
                         <label for="">Nama lapangan</label>
                         <input name="nama_lapangan" type="text" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label for="">Harga Sewa</label>
-                        <input name="hargasewa_lapangan" type="number" class="form-control" required>
-                    </div>
+
 
 
 
@@ -123,10 +120,7 @@
                             <th>Nama lapangan</th>
                             <td><?php echo $a->nama_lapangan ?></td>
                         </tr>
-                        <tr>
-                            <th>Harga Sewa Lapangan</th>
-                            <td><?php echo number_format($a->hargasewa_lapangan) ?></td>
-                        </tr>
+
 
 
                         <!-- <tr>
@@ -209,10 +203,7 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <label for="">Harga Sewa Lapangan</label>
-                            <input name="hargasewa_lapangan" type="number" class="form-control" value="<?php echo $a->hargasewa_lapangan ?>" required>
-                        </div>
+
 
 
                         <!-- <div class="form-group">
