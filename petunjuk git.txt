@@ -1,0 +1,6 @@
+git log --all --decorate --oneline --graph
+
+alias graph="git log --all --decorate --oneline --graph"
+
+git checkout dosen
+git branch staff

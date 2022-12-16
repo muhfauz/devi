@@ -1,0 +1,3 @@
+setting gambar admin
+laporan
+tampilan tambah transaksi
