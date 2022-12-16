@@ -61,14 +61,9 @@ class Penyewa extends CI_Controller
         'tgllahir_penyewa' => $this->input->post('tgllahir_penyewa'),
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_bagian' => $this->input->post('kd_bagian'),
+
         'jk_penyewa' => $this->input->post('jk_penyewa'),
-        'tglmasuk_penyewa' => $this->input->post('tglmasuk_penyewa'),
-        'gambar_penyewa' => $image['file_name'],
-        'bpjs_kes' => $this->input->post('bpjs_kes'),
-        'bpjs_tk' => $this->input->post('bpjs_tk'),
-        'bpjs_pen' => $this->input->post('bpjs_pen'),
+
 
 
 
@@ -92,14 +87,9 @@ class Penyewa extends CI_Controller
         'tgllahir_penyewa' => $this->input->post('tgllahir_penyewa'),
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_bagian' => $this->input->post('kd_bagian'),
         'jk_penyewa' => $this->input->post('jk_penyewa'),
-        'tglmasuk_penyewa' => $this->input->post('tglmasuk_penyewa'),
         'gambar_penyewa' => 'foto_penyewa.png',
-        'bpjs_kes' => $this->input->post('bpjs_kes'),
-        'bpjs_tk' => $this->input->post('bpjs_tk'),
-        'bpjs_pen' => $this->input->post('bpjs_pen'),
+
       );
       $this->Mglobal->tambahdata($data, 'tbl_penyewa');
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -170,14 +160,9 @@ class Penyewa extends CI_Controller
         'tgllahir_penyewa' => $this->input->post('tgllahir_penyewa'),
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_bagian' => $this->input->post('kd_bagian'),
         'jk_penyewa' => $this->input->post('jk_penyewa'),
-        'tglmasuk_penyewa' => $this->input->post('tglmasuk_penyewa'),
         'gambar_penyewa' => $image['file_name'],
-        'bpjs_kes' => $this->input->post('bpjs_kes'),
-        'bpjs_tk' => $this->input->post('bpjs_tk'),
-        'bpjs_pen' => $this->input->post('bpjs_pen'),
+
       );
       $this->Mglobal->editdata('tbl_penyewa', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -196,13 +181,7 @@ class Penyewa extends CI_Controller
         'tgllahir_penyewa' => $this->input->post('tgllahir_penyewa'),
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_bagian' => $this->input->post('kd_bagian'),
         'jk_penyewa' => $this->input->post('jk_penyewa'),
-        'tglmasuk_penyewa' => $this->input->post('tglmasuk_penyewa'),
-        'bpjs_kes' => $this->input->post('bpjs_kes'),
-        'bpjs_tk' => $this->input->post('bpjs_tk'),
-        'bpjs_pen' => $this->input->post('bpjs_pen'),
 
       );
       $this->Mglobal->editdata('tbl_penyewa', $where, $data);

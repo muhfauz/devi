@@ -114,39 +114,10 @@
                         <label for="">Nomor HP penyewa</label>
                         <input name="nohp_penyewa" type="number" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label for="">Jabatan</label>
-                        <select class="form-control" name="kd_jabatan" id="">
-                            <?php foreach ($jabatan as $j) : ?>
-                                <option value="<?php echo $j->kd_jabatan ?>"><?php echo $j->nama_jabatan ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Bagian</label>
-                        <select class="form-control" name="kd_bagian" id="" required>
-                            <option value="">Pilih Bagian</option>
-                            <?php foreach ($bagian as $b) : ?>
-                                <option value="<?php echo $b->kd_bagian ?>"><?php echo $b->nama_bagian ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Tanggal Masuk</label>
-                        <input name="tglmasuk_penyewa" type="date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">BPJS Kesehatan</label>
-                        <input name="bpjs_kes" type="number" class="form-control" value="20000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">BPJS Ketenagakerjaan</label>
-                        <input name="bpjs_tk" type="number" class="form-control" value="40000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Pensiun</label>
-                        <input name="bpjs_pen" type="number" class="form-control" value="20000" required>
-                    </div>
+
+
+
+
 
 
 
@@ -228,20 +199,8 @@
                             <th>No HP</th>
                             <td><?php echo $a->nohp_penyewa ?></td>
                         </tr>
-                        <tr>
-                            <th>Jabatan</th>
-                            <td><?php echo $a->nama_jabatan ?></td>
-                        </tr>
-                        <tr>
-                            <th>Tanggal masuk</th>
-                            <td>
-                                <?php if ($a->tglmasuk_penyewa <> '0000-00-00') {
-                                    echo $this->Mglobal->tanggalindo($a->tglmasuk_penyewa);
-                                } else {
-                                    echo "-";
-                                }  ?>
-                            </td>
-                        </tr>
+
+
                         <tr>
                             <th>Foto</th>
                             <td>
@@ -351,43 +310,9 @@
                             <label for="">No HP penyewa</label>
                             <input name="nohp_penyewa" type="text" class="form-control" value="<?php echo $a->nohp_penyewa ?>" required>
                         </div>
-                        <div class="form-group">
-                            <label for="">Jabatan</label>
 
-                            <select class="form-control" name="kd_jabatan" id="">
-                                <option value="<?php echo $a->kd_jabatan ?>"><?php echo $a->nama_jabatan ?></option>
-                                <?php foreach ($jabatan as $c) : ?>
-                                    <option value="<?php echo $c->kd_jabatan ?>"><?php echo $c->nama_jabatan ?></option>
-                                <?php endforeach; ?>
 
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Bagian</label>
-                            <select class="form-control" name="kd_bagian" id="" required>
-                                <option value="<?php echo $a->kd_bagian ?>"><?php echo $a->nama_bagian ?></option>
-                                <option value="">Pilih Bagian</option>
-                                <?php foreach ($bagian as $b) : ?>
-                                    <option value="<?php echo $b->kd_bagian ?>"><?php echo $b->nama_bagian ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tanggal Masuk</label>
-                            <input name="tglmasuk_penyewa" type="date" class="form-control" value="<?php echo $a->tglmasuk_penyewa ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">BPJS Kesehatan</label>
-                            <input name="bpjs_kes" type="number" class="form-control" value="<?php echo $a->bpjs_kes ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">BPJS Ketenagakerjaan</label>
-                            <input name="bpjs_tk" type="number" class="form-control" value="<?php echo $a->bpjs_tk ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Pensiun</label>
-                            <input name="bpjs_pen" type="number" class="form-control" value="<?php echo $a->bpjs_pen ?>" required>
-                        </div>
+
                         <div class="form-group">
 
                             <label for="">Foto</label>
