@@ -41,7 +41,7 @@ class Jam extends CI_Controller
   {
 
     //Form Validasi jika kosong
-    //  $this->form_validation->set_rules('nama_jam', 'Nama jam', 'required');
+    //  $this->form_validation->set_rules('jam', 'Nama jam', 'required');
     //  $this->form_validation->set_rules('username_jam', 'Username jam', 'required');
     // $this->form_validation->set_rules('password_jam', 'Password jam', 'required');
     // if($this->form_validation->run()!=false)
@@ -54,7 +54,7 @@ class Jam extends CI_Controller
     // if ($this->upload->do_upload('foto_jam')) {
     //   $image = $this->upload->data();
     $data = array(
-      'nama_jam' => $this->input->post('nama_jam'),
+      'jam' => $this->input->post('jam'),
       'kd_jam' => $this->input->post('kd_jam'),
       // 'foto_jam' => $image['file_name'],
     );
@@ -106,7 +106,7 @@ class Jam extends CI_Controller
   {
 
     //Form Validasi jika kosong
-    //  $this->form_validation->set_rules('nama_jam', 'Nama jam', 'required');
+    //  $this->form_validation->set_rules('jam', 'Nama jam', 'required');
     //  $this->form_validation->set_rules('username_jam', 'Username jam', 'required');
     //   $this->form_validation->set_rules('password_jam', 'Password jam', 'required');
     //  if($this->form_validation->run()!=false)
@@ -120,7 +120,7 @@ class Jam extends CI_Controller
     // $image = $this->upload->data();
     $where = array('kd_jam' => $this->input->post('kd_jam'));
     $data = array(
-      'nama_jam' => $this->input->post('nama_jam'),
+      'jam' => $this->input->post('jam'),
       // 'foto_jam' => $image['file_name'],
       //  'password_jam'=>md5($this->input->post('password_jam'))
     );
@@ -143,7 +143,7 @@ class Jam extends CI_Controller
     // } else {
     //   $where = array('kd_jam' => $this->input->post('kd_jam'));
     //   $data = array(
-    //     'nama_jam' => $this->input->post('nama_jam'),
+    //     'jam' => $this->input->post('jam'),
     //     //'foto_jam' => $image['file_name'],
     //     //  'password_jam'=>md5($this->input->post('password_jam'))
     //   );

@@ -46,7 +46,7 @@
         <li class="treeview"> <a href="#"> <i class="fa fa-database mr-2"></i> <span>Master</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Data Admin</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/jabatan') ?>"> <i class="fa fa-star mr-1"></i>Data Jabatan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/jam') ?>"> <i class="fa fa-clock-o mr-1"></i>Data Jam</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/master/bagian') ?>"> <i class="fa fa-star mr-1"></i>Data Bagian</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/master/karyawan') ?>"> <i class="fa fa-user mr-1"></i>Data Karyawan</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/master/jenismobil') ?>"> <i class="fa fa-caret-square-o-right mr-1"></i>Data Jenis Mobil</a></li>

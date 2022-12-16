@@ -38,9 +38,9 @@
         </div>
         <!-- /.col -->
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/master/jabatan') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-green"><i class="fa fa-star"></i></span>
-              <div class="info-box-content"> <span class="info-box-number">Jabatan</span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_jabatan")->num_rows() ?> jabatan</span></div>
+          <a href="<?php echo base_url('admin/master/jam') ?>">
+            <div class="info-box"> <span class="info-box-icon bg-green"><i class="fa fa-clock-o"></i></span>
+              <div class="info-box-content"> <span class="info-box-number">Data Jam</span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_jam")->num_rows() ?> jam</span></div>
               <!-- /.info-box-content -->
             </div>
           </a>
@@ -48,9 +48,9 @@
         </div>
         <!-- /.col -->
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/master/karyawan') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-yellow"><i class="fa fa-user"></i></span>
-              <div class="info-box-content"> <span class="info-box-number">Karyawan</span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_karyawan")->num_rows() ?> karyawan </span></div>
+          <a href="<?php echo base_url('admin/master/lapangan') ?>">
+            <div class="info-box"> <span class="info-box-icon bg-black"><i class="fa fa-futbol-o"></i></span>
+              <div class="info-box-content"> <span class="info-box-number">Lapangan</span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_karyawan")->num_rows() ?> lapangan </span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -58,9 +58,9 @@
         </div>
         <!-- /.col -->
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/master/mobil') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-red"><i class="fa fa-car" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number "> Mobil </span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_mobil")->num_rows() ?> </span></div>
+          <a href="<?php echo base_url('admin/master/penyewa') ?>">
+            <div class="info-box"> <span class="info-box-icon bg-red"><i class="fa fa-users" aria-hidden="true"></i></span>
+              <div class="info-box-content"> <span class="info-box-number "> Penyewa </span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_mobil")->num_rows() ?> </span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->

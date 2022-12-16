@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
-        <h1 class="text-black"> <i class="fa fa-user"></i> <?php echo $x1; ?></h1>
+        <h1 class="text-black"> <i class="fa fa-clock-o"></i> <?php echo $x1; ?></h1>
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li class="sub-bread"><i class="fa fa-angle-right"></i> <?php echo $x2; ?></li>
@@ -15,7 +15,7 @@
 
 
         <div class="info-box">
-            <h4 class="text-primary"><i class="fa fa-user"></i> <?php echo $x1; ?></h4>
+            <h4 class="text-primary"><i class="fa fa-clock-o"></i> <?php echo $x1; ?></h4>
             <!-- <p>Data Table With Full Features</p> -->
             <div class="table-responsive">
                 <?php echo $this->session->userdata('pesan'); ?>
@@ -24,8 +24,8 @@
                     <thead class="bg-aqua">
                         <tr>
                             <th class="text-center text-white" width="10px">No</th>
-                            <th class="text-center text-white">Kode jam</th>
-                            <th class="text-center text-white">Nama jam</th>
+                            <th class="text-center text-white">Kode Jam</th>
+                            <th class="text-center text-white">Jam</th>
 
                             <th class="text-center text-white" width="300px"></th>
 
@@ -38,7 +38,7 @@
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
                                 <td><?php echo $a->kd_jam ?></td>
-                                <td><?php echo $a->nama_jam ?></td>
+                                <td><?php echo $a->jam ?></td>
 
                                 <!-- <td><img src="<?php echo base_url('assets/toko/images/jam/') . $a->foto_jam ?>" alt=""> -->
                                 </td>
@@ -63,7 +63,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-aqua">
-                <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Form Tambah Data</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-clock-o mr-2"></i> Form Tambah Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -72,11 +72,11 @@
                 <form action="<?php echo base_url('admin/master/jam/aksitambahjam') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Kode jam</label>
-                        <input name="kd_jam" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_jam", "tbl_jam", "BAG") ?>">
+                        <input name="kd_jam" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_jam", "tbl_jam", "JAM") ?>">
                     </div>
                     <div class="form-group">
-                        <label for="">Nama jam</label>
-                        <input name="nama_jam" type="text" class="form-control" required>
+                        <label for="">Jam</label>
+                        <input name="jam" type="text" class="form-control" required>
                     </div>
                     <!-- <div class="form-group">
                         <label for="">Foto jam</label>
@@ -101,7 +101,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data jam</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-clock-o mr-2"></i> Detail Data jam</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -109,8 +109,8 @@
                 <div class="modal-body">
                     <table class="table table-borderless">
                         <tr>
-                            <th>Nama jam</th>
-                            <td><?php echo $a->nama_jam ?></td>
+                            <th>Jam</th>
+                            <td><?php echo $a->jam ?></td>
                         </tr>
                         <!-- <tr>
                             <th>Foto jam</th>
@@ -141,7 +141,7 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Hapus Data</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-clock-o mr-2"></i> Hapus Data</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -151,7 +151,7 @@
                         <div class="form-group">
                             Apakah Anda Yakin akan menghapus data ini ?
                             <!-- <label for="">Nama</label>
-                  <input name="nama_jam" type="text" class="form-control" value="<?php echo $a->nama_jam ?>" required> -->
+                  <input name="jam" type="text" class="form-control" value="<?php echo $a->jam ?>" required> -->
                             <input name="kd_jam" type="hidden" class="form-control" value="<?php echo $a->kd_jam ?>" required>
                         </div>
 
@@ -178,7 +178,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Form Edit Data</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-clock-o mr-2"></i> Form Edit Data</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -186,8 +186,8 @@
                 <div class="modal-body">
                     <form action="<?php echo base_url('admin/master/jam/aksieditjam') ?>" method="post">
                         <div class="form-group">
-                            <label for="">Nama jam</label>
-                            <input name="nama_jam" type="text" class="form-control" value="<?php echo $a->nama_jam ?>" required>
+                            <label for="">Jam</label>
+                            <input name="jam" type="text" class="form-control" value="<?php echo $a->jam ?>" required>
                             <input name="kd_jam" type="hidden" class="form-control" value="<?php echo $a->kd_jam ?>" required>
                         </div>
                         <!-- <div class="form-group">
