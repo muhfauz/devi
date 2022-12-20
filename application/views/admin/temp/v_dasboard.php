@@ -4,15 +4,15 @@
   <div class="content-header sty-one">
     <?php
     $kd_admin = $this->session->userdata('kd_admin');
+    $kd_penyewa = $this->session->userdata('kd_penyewa');
 
     ?>
     <?php if ($this->session->userdata('posisi') == 'Administrator') { ?>
 
       <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?> [ADMINISTRATOR]</h4>
-    <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-      <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?> [ADMIN SERVICE]</h4>
+
     <?php } else { ?>
-      <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?> [ADMIN SALES]</h4>
+      <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_penyewa where kd_penyewa='$kd_penyewa'")->row()->nama_penyewa ?> [PENYEWA]</h4>
     <?php } ?>
 
 
