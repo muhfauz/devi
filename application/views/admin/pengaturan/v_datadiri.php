@@ -15,13 +15,13 @@
         <div class="info-box">
             <p><?php echo $this->session->userdata('pesan') ?></p>
             <!-- <h4 class="text-black"><?php echo $x1 ?></h4> -->
-            <?php foreach ($admin as $p) :  ?>
-                <form action="<?php echo base_url('admin/pengaturan/datadiri/aksieditdatadiri') ?>" method="post" enctype="multipart/form-data">
+            <?php foreach ($penyewa as $p) :  ?>
+                <form action="<?php echo base_url('penyewa/pengaturan/datadiri/aksieditdatadiri') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-4">
                             <fieldset class="form-group">
                                 <label>Nama </label>
-                                <input class="form-control" name="nama_admin" id="basicInput" type="text" value="<?php echo $p->nama_admin ?>">
+                                <input class="form-control" name="nama_penyewa" id="basicInput" type="text" value="<?php echo $p->nama_penyewa ?>">
                             </fieldset>
                         </div>
 
@@ -30,13 +30,13 @@
                         <div class="col-lg-4">
                             <fieldset class="form-group">
                                 <label>Alamat</label>
-                                <input class="form-control" name="alamat_admin" id="basicInput" type="text" value="<?php echo $p->alamat_admin ?>">
+                                <input class="form-control" name="alamat_penyewa" id="basicInput" type="text" value="<?php echo $p->alamat_penyewa ?>">
                             </fieldset>
                         </div>
                         <div class="col-lg-4">
                             <fieldset class="form-group">
                                 <label>Nomor HP</label>
-                                <input class="form-control" name="nohp_admin" id="basicInput" type="text" value="<?php echo $p->nohp_admin ?>">
+                                <input class="form-control" name="nohp_penyewa" id="basicInput" type="text" value="<?php echo $p->nohp_penyewa ?>">
                             </fieldset>
                         </div>
 
@@ -44,9 +44,9 @@
                             <fieldset class="form-group">
                                 <label for="">Foto</label>
                                 <br>
-                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $p->gambar_admin ?>" alt="">
+                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $p->gambar_penyewa ?>" alt="">
                                 <br>
-                                <input name="gambar_admin" type="file" class="form-control" value="">
+                                <input name="gambar_penyewa" type="file" class="form-control" value="">
                             </fieldset>
                         </div>
                         <div class="col-lg-12">

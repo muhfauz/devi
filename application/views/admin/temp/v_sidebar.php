@@ -6,14 +6,13 @@
     <div class="user-panel">
       <?php
       $kd_admin = $this->session->userdata('kd_admin');
+      $kd_penyewa = $this->session->userdata('kd_penyewa');
 
       ?>
       <?php if ($this->session->userdata('posisi') == 'Administrator') { ?>
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
-      <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
       <?php } else { ?>
-        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
+        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_penyewa where kd_penyewa='$kd_penyewa'")->row()->gambar_penyewa ?>" class="img-circle" alt="User Image"> </div>
       <?php } ?>
 
       <div class="info">
@@ -22,16 +21,12 @@
             <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
           </p>
           <p>ADMINISTRATOR</p>
-        <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-          <p>
-            <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
-          </p>
-          <p>ADMIN SERVICE</p>
+
         <?php } else { ?>
           <p>
-            <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
+            <?php echo $this->db->query("select * from tbl_penyewa where kd_penyewa='$kd_penyewa'")->row()->nama_penyewa ?>
           </p>
-          <p>ADMIN SALES</p>
+          <p>PENYEWA</p>
         <?php } ?>
 
         <a href="<?php echo base_url('login/logout') ?>"><i class="fa fa-power-off"></i></a>
@@ -78,23 +73,6 @@
         <li class="treeview"> <a href="#"> <i class="fa fa-file-pdf-o mr-2"></i><span>Laporan Penyewaan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lgaji') ?>"> <i class="fa fa-history mr-1"></i>Gaji Karyawan</a></li>
-          </ul>
-        </li>
-
-      <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-        <li class="treeview"> <a href="#"><i class="fa fa-car mr-2" aria-hidden="true"></i><span>Input Service</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Input Service</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Service</a></li>
-
-          </ul>
-        </li>
-
-        <li class="treeview"> <a href="#"><i class="fa fa-cogs mr-2" aria-hidden="true"></i><span>Pengaturan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/datadiri') ?>"><i class="fa fa-user mr-2" aria-hidden="true"></i>Data Diri</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/gantipassadmin') ?>"><i class="fa fa-key mr-2" aria-hidden="true"></i>Ganti Password</a></li>
-
           </ul>
         </li>
 
