@@ -22,7 +22,7 @@ class Datadiri extends CI_Controller
     $kd_penyewa = $this->session->userdata('kd_penyewa');
     // $where = array('kd_santri' => $kd_santri);
     $data['nama_perush'] = $this->db->query("select nama_perush from tbl_perusahaan")->row()->nama_perush;
-    $data['admin'] = $this->db->query("select * from tbl_penyewa where kd_penyewa='$kd_penyewa'")->result();
+    $data['penyewa'] = $this->db->query("select * from tbl_penyewa where kd_penyewa='$kd_penyewa'")->result();
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
@@ -116,22 +116,22 @@ class Datadiri extends CI_Controller
   }
   function aksieditdatadiri()
   {
-    $where = array('kd_admin' => $this->session->userdata('kd_admin'));
+    $where = array('kd_penyewa' => $this->session->userdata('kd_penyewa'));
     $config['upload_path'] = './gambar/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp|jfif';
     $config['max_size'] = '20480000';
     $config['file_name'] = 'adm_' . time();
     $this->load->library('upload', $config);
-    if ($this->upload->do_upload('gambar_admin')) {
+    if ($this->upload->do_upload('gambar_penyewa')) {
       $image = $this->upload->data();
       $data = array(
-        'nama_admin' => $this->input->post('nama_admin'),
-        'nohp_admin' => $this->input->post('nohp_admin'),
-        'alamat_admin' => $this->input->post('alamat_admin'),
-        'gambar_admin' => $image['file_name'],
+        'nama_penyewa' => $this->input->post('nama_penyewa'),
+        'nohp_penyewa' => $this->input->post('nohp_penyewa'),
+        'alamat_penyewa' => $this->input->post('alamat_penyewa'),
+        'gambar_penyewa' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
       );
-      $this->Mglobal->editdata('tbl_admin', $where, $data);
+      $this->Mglobal->editdata('tbl_penyewa', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -149,13 +149,13 @@ class Datadiri extends CI_Controller
       //  }
     } else {
       $data = array(
-        'nama_admin' => $this->input->post('nama_admin'),
-        'nohp_admin' => $this->input->post('nohp_admin'),
-        'alamat_admin' => $this->input->post('alamat_admin'),
+        'nama_penyewa' => $this->input->post('nama_penyewa'),
+        'nohp_penyewa' => $this->input->post('nohp_penyewa'),
+        'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         // 'gambar_admin' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
       );
-      $this->Mglobal->editdata('tbl_admin', $where, $data);
+      $this->Mglobal->editdata('tbl_penyewa', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

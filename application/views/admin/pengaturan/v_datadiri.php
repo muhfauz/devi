@@ -16,7 +16,7 @@
             <p><?php echo $this->session->userdata('pesan') ?></p>
             <!-- <h4 class="text-black"><?php echo $x1 ?></h4> -->
             <?php foreach ($penyewa as $p) :  ?>
-                <form action="<?php echo base_url('penyewa/pengaturan/datadiri/aksieditdatadiri') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url('admin/pengaturan/datadiri/aksieditdatadiri') ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-4">
                             <fieldset class="form-group">
