@@ -6,7 +6,7 @@
     $kd_admin = $this->session->userdata('kd_admin');
 
     ?>
-    <?php if ($this->session->userdata('posisi') == 'admin') { ?>
+    <?php if ($this->session->userdata('posisi') == 'Administrator') { ?>
 
       <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?> [ADMINISTRATOR]</h4>
     <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
@@ -25,7 +25,7 @@
   <!-- Main content -->
   <div class="content">
     <!-- Small boxes (Stat box) -->
-    <?php if ($this->session->userdata('posisi') == 'admin') { ?>
+    <?php if ($this->session->userdata('posisi') == 'Administrator') { ?>
       <div class="row">
         <div class="col-lg-3 col-xs-6">
           <a href="<?php echo base_url('admin/master/admin') ?>">

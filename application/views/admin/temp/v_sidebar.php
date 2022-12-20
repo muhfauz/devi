@@ -17,7 +17,7 @@
       <?php } ?>
 
       <div class="info">
-        <?php if ($this->session->userdata('posisi') == 'admin') { ?>
+        <?php if ($this->session->userdata('posisi') == 'Administrator') { ?>
           <p>
             <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
           </p>
@@ -42,7 +42,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">PERSONAL</li>
       <li> <a href="<?php echo base_url('welcome') ?>"> <i class="fa fa-home mr-2"></i> <span>Home</span> <span class="pull-right-container"> </span> </a> </li>
-      <?php if ($this->session->userdata('posisi') == 'admin') { ?>
+      <?php if ($this->session->userdata('posisi') == 'Administrator') { ?>
         <li class="treeview"> <a href="#"> <i class="fa fa-database mr-2"></i> <span>Master</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Data Admin</a></li>
