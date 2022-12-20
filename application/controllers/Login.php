@@ -50,10 +50,9 @@ class Login extends CI_Controller
 				//$data['judul']=$this->Mglobal->tampilkandata('tbl_judul');
 
 				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-              		 <strong >Login Gagal!</strong><br> Username atau Password Salah!!.  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              			   <span aria-hidden="true">&times;</span>
-               				</button>
-             				</div>');
+              	<strong >Login Gagal!</strong><br> Username atau Password Salah!!.  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              	  <span aria-hidden="true">&times;</span>               				</button>
+             	</div>');
 				//$this->load->view('vlogin',$data);
 				redirect(base_url('login'));
 			}

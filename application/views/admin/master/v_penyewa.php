@@ -83,7 +83,7 @@
                 <form action="<?php echo base_url('admin/master/penyewa/aksitambahpenyewa') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Kode penyewa</label>
-                        <input name="kd_penyewa" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewa", "tbl_penyewa", "KAR") ?>">
+                        <input name="kd_penyewa" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewa", "tbl_penyewa", "PEN") ?>">
                     </div>
                     <div class="form-group">
                         <label for="">Nama penyewa</label>
@@ -114,12 +114,6 @@
                         <label for="">Nomor HP penyewa</label>
                         <input name="nohp_penyewa" type="number" class="form-control" required>
                     </div>
-
-
-
-
-
-
 
                     <div class="form-group">
                         <label for="">Foto penyewa</label>
