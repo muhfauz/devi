@@ -46,15 +46,30 @@ class Login extends CI_Controller
 				}
 				redirect(base_url('welcome'));
 			} else {
+				$where = array('kd_penyewa' => $username, 'password_penyewa' => md5($password));
+				/*$dt = $this->Mglobal->tampilkandatasingle1('tbl_user', $where);
+				$hasil = $this->Mglobal->tampilkandatasingle1('tbl_user', $where)->row();
+				*/
+				$dt = $this->db->query("select * from tbl_penyewa where kd_penyewa='$username' and password_penyewa='$password2'");
+				$hasil = $this->db->query("select * from tbl_penyewa where kd_penyewa='$username' and password_penyewa='$password2'")->row();
+				// $hasil = $this->db->query("select * from tbl_user P, tbl_propinsi PR where P.id_propinsi=PR.id_propinsi and P.kd_user='$username' and P.password_user='$password2'")->row();
+				$proses = $dt->num_rows();
 
-				//$data['judul']=$this->Mglobal->tampilkandata('tbl_judul');
+				if ($proses > 0) {
+					$session = array('kd_penyewa' => $hasil->kd_penyewa, 'nama_penyewa' => $hasil->nama_penyewa, 'status' => 'login', 'posisi' => 'pelamar', 'password_pelamar' => $hasil->password_pelamar);
+					$this->session->set_userdata($session);
+					redirect(base_url('welcome'));
+				} else {
 
-				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+					//$data['judul']=$this->Mglobal->tampilkandata('tbl_judul');
+
+					$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
               	<strong >Login Gagal!</strong><br> Username atau Password Salah!!.  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               	  <span aria-hidden="true">&times;</span>               				</button>
              	</div>');
-				//$this->load->view('vlogin',$data);
-				redirect(base_url('login'));
+					//$this->load->view('vlogin',$data);
+					redirect(base_url('login'));
+				}
 			}
 		} else {
 			//$data['judul']=$this->Mglobal->tampilkandata('tbl_judul');

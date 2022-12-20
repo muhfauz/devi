@@ -8,7 +8,7 @@
       $kd_admin = $this->session->userdata('kd_admin');
 
       ?>
-      <?php if ($this->session->userdata('posisi') == 'admin') { ?>
+      <?php if ($this->session->userdata('posisi') == 'Administrator') { ?>
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
       <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
