@@ -53,7 +53,7 @@ class Admin extends CI_Controller
         'username_admin' => $this->input->post('username_admin'),
         'alamat_admin' => $this->input->post('alamat_admin'),
         'nohp_admin' => $this->input->post('nohp_admin'),
-        'status_admin' => $this->input->post('status_admin'),
+        'status_admin' => 'Administrator',
         'gambar_admin' => $image['file_name'],
         'password_admin' => md5($this->input->post('password_admin'))
       );
@@ -72,7 +72,7 @@ class Admin extends CI_Controller
         'username_admin' => $this->input->post('username_admin'),
         'alamat_admin' => $this->input->post('alamat_admin'),
         'nohp_admin' => $this->input->post('nohp_admin'),
-        'status_admin' => $this->input->post('status_admin'),
+        'status_admin' => 'Administrator',
         'gambar_admin' => 'admin_gaji.png',
         'password_admin' => md5($this->input->post('password_admin'))
       );
@@ -127,7 +127,7 @@ class Admin extends CI_Controller
         'username_admin' => $this->input->post('username_admin'),
         'alamat_admin' => $this->input->post('alamat_admin'),
         'nohp_admin' => $this->input->post('nohp_admin'),
-        'status_admin' => $this->input->post('status_admin'),
+        // 'status_admin' => $this->input->post('status_admin'),
         'gambar_admin' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
       );
@@ -153,7 +153,7 @@ class Admin extends CI_Controller
         'username_admin' => $this->input->post('username_admin'),
         'alamat_admin' => $this->input->post('alamat_admin'),
         'nohp_admin' => $this->input->post('nohp_admin'),
-        'status_admin' => $this->input->post('status_admin'),
+        // 'status_admin' => $this->input->post('status_admin'),
         // 'gambar_admin' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
       );

@@ -90,11 +90,7 @@
           </div>
           <div class="form-group">
             <label for="">Status Admin </label>
-            <select class="form-control" name="status_admin" id="">
-              <option value="admin">Administrator</option>
-              <option value="sales">Admin Sales</option>
-              <option value="service">Admin Service</option>
-            </select>
+            <input name="status_admin" type="text" class="form-control" value="Administrator" readonly>
           </div>
           <div class="form-group">
             <label for="">Foto </label>
@@ -165,14 +161,7 @@
             <tr>
               <th>Status</th>
               <td>
-                <?php if ($a->status_admin == 'admin') { ?>
-                  <button class="btn btn-sm btn-primary"> <i class="fa fa-check mr-1" aria-hidden="true"></i> Administrator</button>
-                <?php } elseif ($a->status_admin == 'service') { ?>
-                  <button class="btn btn-sm btn-primary"><i class="fa fa-check mr-1" aria-hidden="true"></i>Admin Service</button>
-                <?php } else { ?>
-                  <button class="btn btn-sm btn-primary"><i class="fa fa-check mr-1" aria-hidden="true"></i>Admin Sales</button>
-                <?php } ?>
-
+                <button class="btn btn-sm btn-primary"> <i class="fa fa-check mr-1" aria-hidden="true"></i> Administrator</button>
               </td>
             </tr>
 
@@ -261,19 +250,8 @@
             </div>
             <div class="form-group">
               <label for="">Status Admin </label>
-              <select class="form-control" name="status_admin" id="">
-                <?php if ($a->status_admin == 'admin') { ?>
-                  <option value="admin" selected>Administrator</option>
-                <?php } elseif ($a->status_admin == 'service') { ?>
-                  <option value="sales" selected>Admin Sales</option>
-                <?php } else { ?>
-                  <option value="service" selected>Admin Service</option>
-                <?php } ?>
-                <option value="">-- Pilih Status --</option>
-                <option value="admin">Administrator</option>
-                <option value="sales">Admin Sales</option>
-                <option value="service">Admin Service</option>
-              </select>
+              <input name="nohp_admin" type="text" class="form-control" value="<?php echo $a->status_admin ?>" readonly>
+
             </div>
             <div class="form-group">
 
