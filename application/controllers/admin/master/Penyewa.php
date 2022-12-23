@@ -61,15 +61,16 @@ class Penyewa extends CI_Controller
         'tgllahir_penyewa' => $this->input->post('tgllahir_penyewa'),
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
-
         'jk_penyewa' => $this->input->post('jk_penyewa'),
+        'gambar_penyewa' => $image['file_name'],
+        'password_penyewa' => md5('123456'),
 
 
 
 
 
         // 'ket_penyewa' => $this->input->post('ket_penyewa'),
-        // 'foto_penyewa' => $image['file_name'],
+
       );
       $this->Mglobal->tambahdata($data, 'tbl_penyewa');
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -89,6 +90,7 @@ class Penyewa extends CI_Controller
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
         'jk_penyewa' => $this->input->post('jk_penyewa'),
         'gambar_penyewa' => 'foto_penyewa.png',
+        'password_penyewa' => md5('123456'),
 
       );
       $this->Mglobal->tambahdata($data, 'tbl_penyewa');
@@ -162,6 +164,7 @@ class Penyewa extends CI_Controller
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
         'jk_penyewa' => $this->input->post('jk_penyewa'),
         'gambar_penyewa' => $image['file_name'],
+        'password_penyewa' => md5('123456'),
 
       );
       $this->Mglobal->editdata('tbl_penyewa', $where, $data);
@@ -182,6 +185,7 @@ class Penyewa extends CI_Controller
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
         'jk_penyewa' => $this->input->post('jk_penyewa'),
+        'password_penyewa' => md5('123456'),
 
       );
       $this->Mglobal->editdata('tbl_penyewa', $where, $data);
