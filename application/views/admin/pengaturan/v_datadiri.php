@@ -24,13 +24,35 @@
                                 <input class="form-control" name="nama_penyewa" id="basicInput" type="text" value="<?php echo $p->nama_penyewa ?>">
                             </fieldset>
                         </div>
-
-
+                        <div class="col-lg-4">
+                            <fieldset class="form-group">
+                                <label>Tempat lahir</label>
+                                <input class="form-control" name="tempatlahir_penyewa" id="basicInput" type="text" value="<?php echo $p->tempatlahir_penyewa ?>">
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-4">
+                            <fieldset class="form-group">
+                                <label>Tanggal lahir</label>
+                                <input class="form-control" name="tgllahir_penyewa" id="basicInput" type="date" value="<?php echo $p->tgllahir_penyewa ?>">
+                            </fieldset>
+                        </div>
 
                         <div class="col-lg-4">
                             <fieldset class="form-group">
                                 <label>Alamat</label>
                                 <input class="form-control" name="alamat_penyewa" id="basicInput" type="text" value="<?php echo $p->alamat_penyewa ?>">
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-4">
+                            <fieldset class="form-group">
+                                <label>JK</label>
+                                <!-- <input class="form-control" name="alamat_penyewa" id="basicInput" type="text" value="<?php echo $p->alamat_penyewa ?>"> -->
+                                <select class="form-control" name="jk_penyewa" id="" required>
+                                    <option value="<?php echo $p->jk_penyewa ?>"><?php echo $p->jk_penyewa ?></option>
+                                    <option value="">Pilih</option>
+                                    <option value="Pria">Pria</option>
+                                    <option value="Wanita">Wanita</option>
+                                </select>
                             </fieldset>
                         </div>
                         <div class="col-lg-4">

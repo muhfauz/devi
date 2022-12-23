@@ -120,13 +120,16 @@ class Datadiri extends CI_Controller
     $config['upload_path'] = './gambar/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp|jfif';
     $config['max_size'] = '20480000';
-    $config['file_name'] = 'adm_' . time();
+    $config['file_name'] = 'gambarpenyewa_' . time();
     $this->load->library('upload', $config);
     if ($this->upload->do_upload('gambar_penyewa')) {
       $image = $this->upload->data();
       $data = array(
         'nama_penyewa' => $this->input->post('nama_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
+        'tempatlahir_penyewa' => $this->input->post('tempatlahir_penyewa'),
+        'tgllahir_penyewa' => $this->input->post('tgllahir_penyewa'),
+        'jk_penyewa' => $this->input->post('jk_penyewa'),
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
         'gambar_penyewa' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
@@ -151,7 +154,11 @@ class Datadiri extends CI_Controller
       $data = array(
         'nama_penyewa' => $this->input->post('nama_penyewa'),
         'nohp_penyewa' => $this->input->post('nohp_penyewa'),
+        'tempatlahir_penyewa' => $this->input->post('tempatlahir_penyewa'),
+        'tgllahir_penyewa' => $this->input->post('tgllahir_penyewa'),
+        'jk_penyewa' => $this->input->post('jk_penyewa'),
         'alamat_penyewa' => $this->input->post('alamat_penyewa'),
+
         // 'gambar_admin' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
       );
