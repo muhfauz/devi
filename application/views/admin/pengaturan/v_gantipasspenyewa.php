@@ -21,19 +21,20 @@
                         <div class="col-lg-12">
                             <fieldset class="form-group">
                                 <label>Password Lama </label>
-                                <input class="form-control" name="password_lama" id="basicInput" type="text" value="">
+                                <input class="form-control" name="password_lama" id="basicInput" type="password" value="">
+
                             </fieldset>
                         </div>
                         <div class="col-lg-12">
                             <fieldset class="form-group">
                                 <label>Password Baru </label>
-                                <input class="form-control" name="password_baru" id="basicInput" type="text" value="">
+                                <input class="form-control" name="password_baru" id="basicInput" type="password" value="">
                             </fieldset>
                         </div>
                         <div class="col-lg-12">
                             <fieldset class="form-group">
                                 <label>Konfirmasi Password </label>
-                                <input class="form-control" name="konfirmasipassword_baru" id="basicInput" type="text" value="">
+                                <input class="form-control" name="konfirmasipassword_baru" id="basicInput" type="password" value="">
                             </fieldset>
                         </div>
 
