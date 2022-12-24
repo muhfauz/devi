@@ -78,10 +78,10 @@
 
       <?php } else { ?>
 
-        <li class="treeview"> <a href="#"><i class="fa fa-shopping-basket mr-2" aria-hidden="true"></i><span> Penjualan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"><i class="fa fa-shopping-basket mr-2" aria-hidden="true"></i><span> Sewa Lapangan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/penjualan') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Input Penjualan</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/penjualan') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Service</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/penjualan') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Sewa</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/penjualan') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Sewa</a></li>
 
           </ul>
         </li>
