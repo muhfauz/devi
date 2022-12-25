@@ -49,7 +49,7 @@
         </li>
         <li class="treeview"> <a href="#"> <i class="fa fa-retweet mr-2"></i> <span>Data Penyewaan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/email/email') ?>"> <i class="fa fa-envelope-o mr-1"></i>Data Email</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/penyewaan/penyewaan') ?>"> <i class="fa fa-renren mr-1"></i>Input Penyewaan</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/email/facebook') ?>"> <i class="fa fa-facebook-official mr-1"></i>Facebook</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/email/instagram') ?>"> <i class="fa fa-instagram mr-1"></i>Instagram</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/email/hosting') ?>"> <i class="fa fa-server mr-1"></i>Hosting Domain</a></li>
