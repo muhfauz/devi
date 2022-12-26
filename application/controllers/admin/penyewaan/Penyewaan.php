@@ -79,6 +79,36 @@ class Penyewaan extends CI_Controller
   // $this->load->view('penyewaan/temp/v_footer');
   // }
   // }
+
+  function aksihapussetting()
+  {
+    $tgl_penyewaan = $this->input->post('tgl_penyewaan');
+    $kd_lapangan = $this->input->post('kd_lapangan');
+    $kd_admin = $this->session->userdata('kd_admin');
+    $cari = $this->db->query("select * from tbl_penyewaan where tgl_penyewaan='$tgl_penyewaan' and kd_lapangan='$kd_lapangan'")->num_rows();
+    if ($cari > 0) {
+      $where = array(
+        'tgl_penyewaan' => $tgl_penyewaan,
+        'kd_lapangan' => $kd_lapangan,
+      );
+      $this->Mglobal->hapusdata($where, 'tbl_penyewaan');
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Hapus Data Sukses!</strong> Data berhasil dihapus dari database.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>');
+      redirect(base_url('admin/penyewaan/penyewaan/'));
+    } else {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Hapus Data Gagal!</strong> Data tidak ada dalam database.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>');
+      redirect(base_url('admin/penyewaan/penyewaan/'));
+    }
+  }
   function hapuspenyewaan()
   {
     $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
