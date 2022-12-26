@@ -24,9 +24,11 @@
                     <thead class="bg-aqua">
                         <tr>
                             <th class="text-center text-white" width="10px">No</th>
-                            <th class="text-center text-white">Kode penyewaan</th>
-                            <th class="text-center text-white">Nama penyewaan</th>
-
+                            <th class="text-center text-white">Tanggal</th>
+                            <th class="text-center text-white">Lapangan</th>
+                            <th class="text-center text-white">Jam</th>
+                            <th class="text-center text-white">Harga Sewa</th>
+                            <th class="text-center text-white">Status</th>
 
                             <!-- <th class="text-center text-white">Foto</th> -->
                             <th class="text-center text-white" width="300px"></th>
@@ -39,8 +41,17 @@
                         foreach ($penyewaan as $a) :  ?>
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
-                                <td><?php echo $a->kd_penyewaan ?></td>
-                                <td><?php echo $a->nama_penyewaan ?></td>
+                                <td><?php echo $this->Mglobal->tanggalindo($a->tgl_penyewaan) ?></td>
+                                <td><?php echo $a->nama_lapangan ?></td>
+                                <td><?php echo $a->jam ?></td>
+                                <td class="text-right"><?php echo $this->Mglobal->rupiah($a->harga_sewa) ?></td>
+                                <td><?php if ($a->kd_penyewa == "") { ?>
+
+                                        <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Kosong</button>
+                                    <?php } else { ?>
+                                        <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong</button>
+                                    <?php } ?>
+                                </td>
 
 
                                 <!-- <td><img src="<?php echo base_url('assets/toko/images/penyewaan/') . $a->foto_penyewaan ?>" alt=""> -->

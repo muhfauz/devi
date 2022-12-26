@@ -19,7 +19,7 @@ class Penyewaan extends CI_Controller
     $data['x2'] = 'penyewaan';
     $data['x3'] = 'penyewaan';
     $data['x4'] = 'Data penyewaan ' . '| ' . $this->db->query('select nama_perush from tbl_perusahaan')->row()->nama_perush;
-    $data['penyewaan'] = $this->Mglobal->tampilkandata('tbl_penyewaan');
+    $data['penyewaan'] = $this->db->query("select * from tbl_penyewaan P, tbl_lapangan L, tbl_jam J where P.kd_lapangan=L.kd_lapangan and P.kd_jam=J.kd_jam")->result();
     $data['lapangan'] = $this->Mglobal->tampilkandata('tbl_lapangan');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
