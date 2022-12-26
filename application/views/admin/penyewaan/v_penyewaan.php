@@ -72,14 +72,26 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?php echo base_url('admin/master/penyewaan/aksitambahpenyewaan') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url('admin/penyewaan/penyewaan/aksitambahpenyewaan') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Kode penyewaan</label>
                         <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewaan", "tbl_penyewaan", "LAP") ?>">
                     </div>
                     <div class="form-group">
-                        <label for="">Nama penyewaan</label>
-                        <input name="nama_penyewaan" type="text" class="form-control" required>
+                        <label for="">Tanggal</label>
+                        <input name="tgl_penyewaan" type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Lapangan</label>
+                        <select name="kd_lapangan" class="form-control" required>
+
+                            <option value="">-- Pilih Lapangan --</option>
+                            <?php foreach ($lapangan as $l) : ?>
+                                <option value="<?php echo $l->kd_lapangan ?>"><?php echo $l->nama_lapangan ?></option>
+                            <?php endforeach ?>
+
+                        </select>
+
                     </div>
 
 

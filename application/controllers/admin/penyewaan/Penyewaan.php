@@ -20,6 +20,7 @@ class Penyewaan extends CI_Controller
     $data['x3'] = 'penyewaan';
     $data['x4'] = 'Data penyewaan ' . '| ' . $this->db->query('select nama_perush from tbl_perusahaan')->row()->nama_perush;
     $data['penyewaan'] = $this->Mglobal->tampilkandata('tbl_penyewaan');
+    $data['lapangan'] = $this->Mglobal->tampilkandata('tbl_lapangan');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
@@ -40,30 +41,18 @@ class Penyewaan extends CI_Controller
   function aksitambahpenyewaan()
   {
 
-    //Form Validasi jika kosong
-    //  $this->form_validation->set_rules('nama_penyewaan', 'Nama penyewaan', 'required');
-    //  $this->form_validation->set_rules('username_penyewaan', 'Username penyewaan', 'required');
-    // $this->form_validation->set_rules('password_penyewaan', 'Password penyewaan', 'required');
-    // if($this->form_validation->run()!=false)
-    // {
-    // $config['upload_path'] = './assets/toko/images/penyewaan/';
-    // $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
-    // $config['max_size'] = '2048';
-    // $config['file_name'] = 'foto_penyewaan_' . time();
-    // $this->load->library('upload', $config);
-    // if ($this->upload->do_upload('foto_penyewaan')) {
-    //   $image = $this->upload->data();
-    $data = array(
-      'nama_penyewaan' => $this->input->post('nama_penyewaan'),
-      'kd_penyewaan' => $this->input->post('kd_penyewaan'),
+    $tgl_penyewaan = $this->input->post('tgl_penyewaan');
+    $kd_lapangan = $this->input->post('kd_lapangan');
+    $kd_admin = $this->session->userdata('kd_admin');
 
 
 
 
-      // 'ket_penyewaan' => $this->input->post('ket_penyewaan'),
-      // 'foto_penyewaan' => $image['file_name'],
-    );
-    $this->Mglobal->tambahdata($data, 'tbl_penyewaan');
+    $this->db->query("INSERT INTO tbl_penyewaan (kd_jam, tgl_penyewaan, kd_lapangan, kd_admin, harga_sewa)
+    SELECT tbl_jam.kd_jam, '$tgl_penyewaan', '$kd_lapangan','$kd_admin', tbl_jam.hargasewa_lapangan from tbl_jam");
+
+
+
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
