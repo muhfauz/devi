@@ -44,22 +44,30 @@ class Penyewaan extends CI_Controller
     $tgl_penyewaan = $this->input->post('tgl_penyewaan');
     $kd_lapangan = $this->input->post('kd_lapangan');
     $kd_admin = $this->session->userdata('kd_admin');
+    $cari = $this->db->query("select * from tbl_penyewaan where tgl_penyewaan='$tgl_penyewaan' and kd_lapangan='$kd_lapangan' and kd_jam='JAM001'")->num_rows();
 
 
 
+    if ($cari > 0) {
+      $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Tambah Data Gagal!</strong> Data yang Anda tambahkan sudah ada di database.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>');
+      redirect(base_url('admin/penyewaan/penyewaan/'));
+    } else {
 
-    $this->db->query("INSERT INTO tbl_penyewaan (kd_jam, tgl_penyewaan, kd_lapangan, kd_admin, harga_sewa)
+      $this->db->query("INSERT INTO tbl_penyewaan (kd_jam, tgl_penyewaan, kd_lapangan, kd_admin, harga_sewa)
     SELECT tbl_jam.kd_jam, '$tgl_penyewaan', '$kd_lapangan','$kd_admin', tbl_jam.hargasewa_lapangan from tbl_jam");
-
-
-
-    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
-    redirect(base_url('admin/penyewaan/penyewaan/'));
+      redirect(base_url('admin/penyewaan/penyewaan/'));
+    }
   }
 
   // else {
