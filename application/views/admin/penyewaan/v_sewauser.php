@@ -109,10 +109,10 @@
                         </div>
                         <div class="form-group">
                             <label for="">Pembayaran Dengan Transfer</label>
-                            <select name="" class="form-control" required>
+                            <select name="pembayaran_sewa" class="form-control" required>
                                 <option value="">-- Pilih Pembayaran --</option>
-                                <option value="<?php echo $a->harga_sewa ?>">Lunas <?php echo $a->harga_sewa ?></option>
-                                <option value="<?php echo $a->harga_sewa / 2 ?>">DP 50% [ <?php echo $a->harga_sewa / 2 ?>]</option>
+                                <option value="Lunas <?php echo $a->harga_sewa ?>">Lunas <?php echo $a->harga_sewa ?></option>
+                                <option value="DP <?php echo $a->harga_sewa / 2 ?>">DP 50% [ <?php echo $a->harga_sewa / 2 ?>]</option>
 
                             </select>
                         </div>

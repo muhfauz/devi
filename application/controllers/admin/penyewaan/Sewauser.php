@@ -182,6 +182,9 @@ class Sewauser extends CI_Controller
     $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
     $data = array(
       'kd_penyewa' => $this->session->userdata('kd_penyewa'),
+      'status_penyewaan' => 'booking',
+      'pembayaran_sewa' => $this->input->post('pembayaran_sewa'),
+      'tgl_pesan' => date('Y-m-d h:i:sa'),
 
 
 
