@@ -102,39 +102,24 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/penyewaan/penyewaan/aksitambahpenyewaan') ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url('admin/penyewaan/sewauser/aksisewauser') ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Kode penyewaan</label>
-                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewaan", "tbl_penyewaan", "LAP") ?>">
+                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->kd_penyewaan ?>">
                         </div>
                         <div class="form-group">
-                            <label for="">Tanggal</label>
-                            <input name="tgl_penyewaan" type="date" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Lapangan</label>
-                            <select name="kd_lapangan" class="form-control" required>
-
-                                <option value="">-- Pilih Lapangan --</option>
-                                <?php foreach ($lapangan as $l) : ?>
-                                    <option value="<?php echo $l->kd_lapangan ?>"><?php echo $l->nama_lapangan ?></option>
-                                <?php endforeach ?>
+                            <label for="">Pembayaran Dengan Transfer</label>
+                            <select name="" class="form-control" required>
+                                <option value="">-- Pilih Pembayaran --</option>
+                                <option value="<?php echo $a->harga_sewa ?>">Lunas <?php echo $a->harga_sewa ?></option>
+                                <option value="<?php echo $a->harga_sewa / 2 ?>">DP 50% [ <?php echo $a->harga_sewa / 2 ?>]</option>
 
                             </select>
-
                         </div>
-
-
-
-
-
-
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Simpan</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Booking</button>
                 </div>
                 </form>
             </div>

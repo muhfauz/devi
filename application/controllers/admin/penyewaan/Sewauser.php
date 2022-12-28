@@ -77,8 +77,6 @@ class Sewauser extends CI_Controller
     $kd_admin = $this->session->userdata('kd_admin');
     $cari = $this->db->query("select * from tbl_penyewaan where tgl_penyewaan='$tgl_penyewaan' and kd_lapangan='$kd_lapangan' and kd_jam='JAM001'")->num_rows();
 
-
-
     if ($cari > 0) {
       $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Tambah Data Gagal!</strong> Data yang Anda tambahkan sudah ada di database.
@@ -165,7 +163,7 @@ class Sewauser extends CI_Controller
     $this->load->view('adm/penyewaan/penyewaan/veditpenyewaan', $data);
     $this->load->view('adm/footer');
   }
-  function aksieditpenyewaan()
+  function aksisewauser()
   {
 
     //Form Validasi jika kosong
@@ -183,7 +181,7 @@ class Sewauser extends CI_Controller
     // $image = $this->upload->data();
     $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
     $data = array(
-      'nama_penyewaan' => $this->input->post('nama_penyewaan'),
+      'kd_penyewa' => $this->session->userdata('kd_penyewa'),
 
 
 
@@ -198,7 +196,7 @@ class Sewauser extends CI_Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/penyewaan/penyewaan/'));
+    redirect(base_url('admin/penyewaan/sewauser/'));
     //  }
     //  else {
 
