@@ -41,8 +41,6 @@
             </div>
             <div class="table-responsive">
                 <?php echo $this->session->userdata('pesan'); ?>
-                <!-- <a href="" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambahdata"> <i class="fa fa-plus-square mr-2"></i> Tambah Data</a>
-                <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
                 <table id="example1" class="table table-bordered table-striped table-hover">
                     <thead class="bg-aqua">
                         <tr>
@@ -66,6 +64,7 @@
                                 <td class="text-right"><?php echo $this->Mglobal->rupiah($a->harga_sewa) ?></td>
                                 <td><?php if ($a->kd_penyewa == "") { ?>
 
+
                                         <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Kosong</button>
                                     <?php } else { ?>
                                         <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong</button>
@@ -75,10 +74,8 @@
                                 </td>
                                 <td>
                                     <?php if ($a->kd_penyewa == "") { ?>
-                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Booking Lapangn</a>
-
-                                    <?php } else { ?>
-                                        <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong</button>
+                                        <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
+                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Booking Lapangn</a>
                                     <?php } ?>
                                 </td>
                             </tr>
