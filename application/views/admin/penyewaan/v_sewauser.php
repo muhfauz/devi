@@ -65,9 +65,9 @@
                                 <td><?php if ($a->kd_penyewa == "") { ?>
 
 
-                                        <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Kosong</button>
+                                        <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Tersedia</button>
                                     <?php } else { ?>
-                                        <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong</button>
+                                        <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong </button>
                                     <?php } ?>
 
 
