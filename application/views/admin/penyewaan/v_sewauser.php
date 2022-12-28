@@ -12,8 +12,6 @@
 
     <!-- Main content -->
     <div class="content">
-
-
         <div class="info-box">
             <h4 class="text-primary"><i class="fa fa-futbol-o"></i> <?php echo $x1; ?></h4>
             <p><?php echo $x4 ?></p>
@@ -40,8 +38,6 @@
                     </div>
 
                 </div>
-
-
             </div>
             <div class="table-responsive">
                 <?php echo $this->session->userdata('pesan'); ?>
