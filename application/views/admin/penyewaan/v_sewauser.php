@@ -24,7 +24,7 @@
                         <label for="exampleInputEmail3" class="col-sm-3 control-label">Tanggal </label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input class="form-control text-right" id="namaoutlet" placeholder="Nama outlet" type="text" value="Rp. " readonly>
+                                <input class="form-control text-right" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $this->Mglobal->tanggalindo($this->session->userdata('tgl_penyewaan')) ?>" readonly>
                                 <div class="input-group-addon"><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                         <label for="exampleInputEmail3" class="col-sm-3 control-label">Lapangan </label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input class="form-control text-right" id="namaoutlet" placeholder="Nama outlet" type="text" value="Rp. " readonly>
+                                <input class="form-control text-right" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $this->session->userdata('nama_lapangan') ?>" readonly>
                                 <div class="input-group-addon"><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
@@ -51,14 +51,12 @@
                     <thead class="bg-aqua">
                         <tr>
                             <th class="text-center text-white" width="10px">No</th>
-                            <th class="text-center text-white">Tanggal</th>
-                            <th class="text-center text-white">Lapangan</th>
                             <th class="text-center text-white">Jam</th>
                             <th class="text-center text-white">Harga Sewa</th>
                             <th class="text-center text-white">Status</th>
 
                             <!-- <th class="text-center text-white">Foto</th> -->
-                            <!-- <th class="text-center text-white" width="300px"></th> -->
+                            <th class="text-center text-white" width="300px"></th>
 
                         </tr>
                     </thead>
@@ -68,8 +66,6 @@
                         foreach ($penyewaan as $a) :  ?>
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
-                                <td><?php echo $this->Mglobal->tanggalindo($a->tgl_penyewaan) ?></td>
-                                <td><?php echo $a->nama_lapangan ?></td>
                                 <td><?php echo $a->jam ?></td>
                                 <td class="text-right"><?php echo $this->Mglobal->rupiah($a->harga_sewa) ?></td>
                                 <td><?php if ($a->kd_penyewa == "") { ?>
@@ -81,6 +77,7 @@
 
 
                                 </td>
+                                <td></td>
                             </tr>
                         <?php endforeach ?>
 

@@ -29,12 +29,21 @@ class Sewauser extends CI_Controller
     $this->load->view('admin/penyewaan/v_pilih');
     $this->load->view('admin/temp/v_footer');
   }
-
-  function index()
+  function pindah()
   {
     $tgl_penyewaan = $this->input->post('tgl_penyewaan');
     $kd_lapangan = $this->input->post('kd_lapangan');
-    $kd_admin = $this->session->userdata('kd_admin');
+    $nama_lapangan = $this->db->query("select nama_lapangan from tbl_lapangan where kd_lapangan='$kd_lapangan'")->row()->nama_lapangan;
+    $session = array('tgl_penyewaan' => $tgl_penyewaan, 'kd_lapangan' => $kd_lapangan, 'nama_lapangan' => $nama_lapangan);
+    $this->session->set_userdata($session);
+    redirect(base_url('admin/penyewaan/sewauser/'));
+  }
+
+  function index()
+  {
+    $tgl_penyewaan = $this->session->userdata('tgl_penyewaan');
+    $kd_lapangan = $this->session->userdata('kd_lapangan');
+    // $kd_admin = $this->session->userdata('kd_admin');
     // $cari = $this->db->query("select * from tbl_penyewaan where tgl_penyewaan='$tgl_penyewaan' and kd_lapangan='$kd_lapangan' and kd_jam='JAM001'")->num_rows();
     $data['x1'] = 'Data penyewaan';
     $data['x2'] = 'penyewaan';
