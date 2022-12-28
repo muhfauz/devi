@@ -16,7 +16,7 @@
             <p><?php echo $this->session->userdata('pesan') ?></p>
             <h4 class="text-black"><?php echo $x3 ?></h4>
 
-            <form action="<?php echo base_url('admin/penyewaan/penyewaan') ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo base_url('admin/penyewaan/sewauser') ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-6">
                         <fieldset class="form-group">

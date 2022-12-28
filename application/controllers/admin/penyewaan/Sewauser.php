@@ -32,11 +32,15 @@ class Sewauser extends CI_Controller
 
   function index()
   {
+    $tgl_penyewaan = $this->input->post('tgl_penyewaan');
+    $kd_lapangan = $this->input->post('kd_lapangan');
+    $kd_admin = $this->session->userdata('kd_admin');
+    // $cari = $this->db->query("select * from tbl_penyewaan where tgl_penyewaan='$tgl_penyewaan' and kd_lapangan='$kd_lapangan' and kd_jam='JAM001'")->num_rows();
     $data['x1'] = 'Data penyewaan';
     $data['x2'] = 'penyewaan';
     $data['x3'] = 'penyewaan';
     $data['x4'] = 'Data penyewaan ' . '| ' . $this->db->query('select nama_perush from tbl_perusahaan')->row()->nama_perush;
-    $data['penyewaan'] = $this->db->query("select * from tbl_penyewaan P, tbl_lapangan L, tbl_jam J where P.kd_lapangan=L.kd_lapangan and P.kd_jam=J.kd_jam")->result();
+    $data['penyewaan'] = $this->db->query("select * from tbl_penyewaan P, tbl_lapangan L, tbl_jam J where P.kd_lapangan=L.kd_lapangan and P.kd_jam=J.kd_jam and P.kd_lapangan='$kd_lapangan' and P.tgl_penyewaan='$tgl_penyewaan'")->result();
     $data['lapangan'] = $this->Mglobal->tampilkandata('tbl_lapangan');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
@@ -44,17 +48,7 @@ class Sewauser extends CI_Controller
     $this->load->view('admin/penyewaan/v_sewauser');
     $this->load->view('admin/temp/v_footer');
   }
-  function tambahpenyewaan()
-  {
-    $data['x1'] = 'penyewaan';
-    $data['x2'] = 'penyewaan';
-    $data['x3'] = 'Tambah penyewaan Inventaris';
-    $data['x4'] = 'Menambahkan Data penyewaan Inventaris Sahabat Optik';
-    $this->load->view('adm/header');
-    $this->load->view('adm/sidebar');
-    $this->load->view('adm/penyewaan/penyewaan/vtambahpenyewaan', $data);
-    $this->load->view('adm/footer');
-  }
+
   function aksitambahpenyewaan()
   {
 
