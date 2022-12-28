@@ -24,16 +24,16 @@
                         <label for="exampleInputEmail3" class="col-sm-3 control-label">Tanggal </label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input class="form-control text-right" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $this->Mglobal->tanggalindo($this->session->userdata('tgl_penyewaan')) ?>" readonly>
+                                <input class="form-control text-left" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $this->Mglobal->tanggalindo($this->session->userdata('tgl_penyewaan')) ?>" readonly>
                                 <div class="input-group-addon"><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mb-1">
                         <label for="exampleInputEmail3" class="col-sm-3 control-label">Lapangan </label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input class="form-control text-right" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $this->session->userdata('nama_lapangan') ?>" readonly>
+                                <input class="form-control text-left" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $this->session->userdata('nama_lapangan') ?>" readonly>
                                 <div class="input-group-addon"><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
@@ -77,7 +77,14 @@
 
 
                                 </td>
-                                <td></td>
+                                <td>
+                                    <?php if ($a->kd_penyewa == "") { ?>
+                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Booking Lapangn</a>
+
+                                    <?php } else { ?>
+                                        <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong</button>
+                                    <?php } ?>
+                                </td>
                             </tr>
                         <?php endforeach ?>
 
@@ -90,54 +97,57 @@
 <!-- /.content-wrapper -->
 
 <!-- Modal -->
-<div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-aqua">
-                <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-futbol-o mr-2"></i> Form Tambah Data</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<?php foreach ($penyewaan as $a) : ?>
+
+    <div class="modal fade" id="booking<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-aqua">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-futbol-o mr-2"></i> Form Tambah Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/penyewaan/penyewaan/aksitambahpenyewaan') ?>" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="">Kode penyewaan</label>
+                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewaan", "tbl_penyewaan", "LAP") ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tanggal</label>
+                            <input name="tgl_penyewaan" type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Lapangan</label>
+                            <select name="kd_lapangan" class="form-control" required>
+
+                                <option value="">-- Pilih Lapangan --</option>
+                                <?php foreach ($lapangan as $l) : ?>
+                                    <option value="<?php echo $l->kd_lapangan ?>"><?php echo $l->nama_lapangan ?></option>
+                                <?php endforeach ?>
+
+                            </select>
+
+                        </div>
+
+
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Simpan</button>
+                </div>
+                </form>
             </div>
-            <div class="modal-body">
-                <form action="<?php echo base_url('admin/penyewaan/penyewaan/aksitambahpenyewaan') ?>" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="">Kode penyewaan</label>
-                        <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewaan", "tbl_penyewaan", "LAP") ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Tanggal</label>
-                        <input name="tgl_penyewaan" type="date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Lapangan</label>
-                        <select name="kd_lapangan" class="form-control" required>
-
-                            <option value="">-- Pilih Lapangan --</option>
-                            <?php foreach ($lapangan as $l) : ?>
-                                <option value="<?php echo $l->kd_lapangan ?>"><?php echo $l->nama_lapangan ?></option>
-                            <?php endforeach ?>
-
-                        </select>
-
-                    </div>
-
-
-
-
-
-
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Simpan</button>
-            </div>
-            </form>
         </div>
     </div>
-</div>
+<?php endforeach ?>
 
 <!-- Modal -->
 <div class="modal fade" id="hapussetting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
