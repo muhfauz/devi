@@ -47,7 +47,7 @@
                             <th class="text-center text-white" width="10px">No</th>
                             <th class="text-center text-white">Tanggal</th>
                             <th class="text-center text-white">Nama Lapangan</th>
-                            <th class="text-center text-white">Jam</th>
+                            <th class="text-center text-white">Metode Bayar</th>
                             <th class="text-center text-white">Harga Sewa</th>
                             <th class="text-center text-white">Metode Bayar</th>
                             <th class="text-center text-white">Status</th>
@@ -64,20 +64,30 @@
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
                                 <td><?php echo $this->Mglobal->tanggalindo($a->tgl_penyewaan) ?></td>
-                                <td><?php echo $a->nama_lapangan ?></td>
-                                <td><?php echo $a->jam ?></td>
+                                <td><?php echo $a->nama_lapangan . ' Jam ' . $a->jam ?></td>
+                                <td><?php echo $a->pembayaran_sewa ?></td>
                                 <td class="text-right"><?php echo $this->Mglobal->rupiah($a->harga_sewa) ?></td>
                                 <td><?php if ($a->kd_penyewa == "") { ?>
-                                        <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Tersedia</button>
+                                        <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Lunas</button>
                                     <?php } else { ?>
-                                        <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong </button>
+                                        <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong </button>
                                     <?php } ?>
 
                                 </td>
                                 <td>
-                                    <?php if ($a->kd_penyewa == "") { ?>
+                                    <?php if ($a->jumlah_bayar > 0) { ?>
                                         <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
                                         <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Booking Lapangn</a>
+                                    <?php } else { ?>
+                                        <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Hutang</button>
+                                    <?php } ?>
+                                </td>
+                                <td>
+                                    <?php if ($a->jumlah_bayar > 0) { ?>
+                                        <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
+                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Booking Lapangn</a>
+                                    <?php } else { ?>
+                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Bayar DP/ Pelunasan</a>
                                     <?php } ?>
                                 </td>
                             </tr>
