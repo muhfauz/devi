@@ -19,8 +19,8 @@
             <p><?php echo $x4 ?></p>
             <div class="table-responsive">
                 <?php echo $this->session->userdata('pesan'); ?>
-                <a href="" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambahdata"> <i class="fa fa-plus-square mr-2"></i> Tambah Data</a>
-                <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a>
+                <!-- <a href="" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambahdata"> <i class="fa fa-plus-square mr-2"></i> Tambah Data</a> -->
+                <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
                 <table id="example1" class="table table-bordered table-striped table-hover">
                     <thead class="bg-aqua">
                         <tr>
