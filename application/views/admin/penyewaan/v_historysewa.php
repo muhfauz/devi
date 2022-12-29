@@ -19,19 +19,19 @@
                 <div class="col sm-1 mt-2 ml-2 mr-2 mb-1">
 
                     <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Tanggal </label>
+                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Nama </label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input class="form-control text-left" id="namaoutlet" placeholder="Nama outlet" type="text" value="" readonly>
+                                <input class="form-control text-left" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $nama_penyewa ?>" readonly>
                                 <div class="input-group-addon"><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
                     </div>
                     <div class="form-group row mb-1">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Lapangan </label>
+                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Alamat </label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input class="form-control text-left" id="namaoutlet" placeholder="Nama outlet" type="text" value="" readonly>
+                                <input class="form-control text-left" id="namaoutlet" placeholder="Nama outlet" type="text" value="<?php echo $alamat_penyewa ?>" readonly>
                                 <div class="input-group-addon"><i class="fa fa-check" aria-hidden="true"></i></div>
                             </div>
                         </div>
@@ -45,9 +45,11 @@
                     <thead class="bg-aqua">
                         <tr>
                             <th class="text-center text-white" width="10px">No</th>
+                            <th class="text-center text-white">Tanggal</th>
                             <th class="text-center text-white">Nama Lapangan</th>
                             <th class="text-center text-white">Jam</th>
                             <th class="text-center text-white">Harga Sewa</th>
+                            <th class="text-center text-white">Metode Bayar</th>
                             <th class="text-center text-white">Status</th>
 
                             <!-- <th class="text-center text-white">Foto</th> -->
@@ -61,17 +63,15 @@
                         foreach ($penyewaan as $a) :  ?>
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
+                                <td><?php echo $this->Mglobal->tanggalindo($a->tgl_penyewaan) ?></td>
                                 <td><?php echo $a->nama_lapangan ?></td>
                                 <td><?php echo $a->jam ?></td>
                                 <td class="text-right"><?php echo $this->Mglobal->rupiah($a->harga_sewa) ?></td>
                                 <td><?php if ($a->kd_penyewa == "") { ?>
-
-
                                         <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Tersedia</button>
                                     <?php } else { ?>
                                         <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-close mr-2"></i> Kosong </button>
                                     <?php } ?>
-
 
                                 </td>
                                 <td>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2022 at 11:51 PM
+-- Generation Time: Dec 29, 2022 at 10:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -127,10 +127,10 @@ CREATE TABLE `tbl_jam` (
 
 INSERT INTO `tbl_jam` (`kd_jam`, `jam`, `hargasewa_lapangan`) VALUES
 ('JAM001', '09:00', 80000),
-('JAM002', '10:00', 0),
-('JAM003', '11:00', 0),
+('JAM002', '10:00', 80000),
+('JAM003', '11:00', 80000),
 ('JAM004', '12:00', 80000),
-('JAM005', '19:00', 120000);
+('JAM005', '13.00', 80000);
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,9 @@ CREATE TABLE `tbl_lapangan` (
 --
 
 INSERT INTO `tbl_lapangan` (`kd_lapangan`, `nama_lapangan`) VALUES
-('LAP001', 'Lapangan A');
+('LAP001', 'Lapangan A'),
+('LAP002', 'Lapangan B'),
+('LAP003', 'Lapangan C');
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,7 @@ CREATE TABLE `tbl_penyewa` (
   `nama_penyewa` varchar(30) NOT NULL,
   `tempatlahir_penyewa` varchar(20) NOT NULL,
   `tgllahir_penyewa` date NOT NULL,
-  `jk_penyewa` varchar(10) NOT NULL,
+  `jk_penyewa` enum('Pria','Wanita') NOT NULL,
   `alamat_penyewa` varchar(30) NOT NULL,
   `nohp_penyewa` varchar(15) NOT NULL,
   `gambar_penyewa` varchar(58) NOT NULL,
@@ -210,7 +212,50 @@ CREATE TABLE `tbl_penyewa` (
 --
 
 INSERT INTO `tbl_penyewa` (`kd_penyewa`, `nama_penyewa`, `tempatlahir_penyewa`, `tgllahir_penyewa`, `jk_penyewa`, `alamat_penyewa`, `nohp_penyewa`, `gambar_penyewa`, `password_penyewa`) VALUES
-('PEN001', 'Sutrisno', 'aaaa', '2022-12-16', 'Pria', 'Dawuhan Wetan', '082135644333', 'adm_1657406829.png', 'fcea920f7412b5da7be0cf42b8c93759');
+('PEN001', 'Sutrisno', 'aaaa', '2022-12-16', 'Pria', 'Dawuhan Wetan', '082135644333', 'adm_1657406829.png', 'e10adc3949ba59abbe56e057f20f883e'),
+('PEN002', 'aaa', 'bbb', '2022-12-24', 'Wanita', 'aaaa', '12222222', 'foto_penyewa.png', 'e10adc3949ba59abbe56e057f20f883e');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_penyewaan`
+--
+
+CREATE TABLE `tbl_penyewaan` (
+  `kd_penyewaan` int(10) NOT NULL,
+  `tgl_penyewaan` date NOT NULL,
+  `kd_lapangan` varchar(10) NOT NULL,
+  `kd_jam` varchar(10) NOT NULL,
+  `kd_penyewa` varchar(10) NOT NULL,
+  `kd_admin` varchar(10) NOT NULL,
+  `status_penyewaan` enum('kosong','lunas','selesai','gagal','booking') NOT NULL,
+  `tgl_pesan` datetime NOT NULL,
+  `harga_sewa` double NOT NULL,
+  `pembayaran_sewa` varchar(20) NOT NULL,
+  `jumlah_bayar` int(11) NOT NULL,
+  `bukti_bayar` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_penyewaan`
+--
+
+INSERT INTO `tbl_penyewaan` (`kd_penyewaan`, `tgl_penyewaan`, `kd_lapangan`, `kd_jam`, `kd_penyewa`, `kd_admin`, `status_penyewaan`, `tgl_pesan`, `harga_sewa`, `pembayaran_sewa`, `jumlah_bayar`, `bukti_bayar`) VALUES
+(82, '2022-12-29', 'LAP001', 'JAM001', 'PEN001', 'ADM001', 'booking', '0000-00-00 00:00:00', 80000, 'Lunas 80000', 0, ''),
+(83, '2022-12-29', 'LAP001', 'JAM002', 'PEN001', 'ADM001', 'booking', '2022-12-29 06:11:17', 80000, 'DP 40000', 0, ''),
+(84, '2022-12-29', 'LAP001', 'JAM003', 'PEN001', 'ADM001', 'booking', '2022-12-29 07:56:23', 80000, 'Lunas 80000', 0, ''),
+(85, '2022-12-29', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(86, '2022-12-29', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(89, '2022-12-29', 'LAP002', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(90, '2022-12-29', 'LAP002', 'JAM002', 'PEN001', 'ADM001', 'booking', '2022-12-29 04:39:55', 80000, 'Lunas 80000', 0, ''),
+(91, '2022-12-29', 'LAP002', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(92, '2022-12-29', 'LAP002', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(93, '2022-12-29', 'LAP002', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(96, '2022-12-29', 'LAP003', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(97, '2022-12-29', 'LAP003', 'JAM002', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(98, '2022-12-29', 'LAP003', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(99, '2022-12-29', 'LAP003', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
+(100, '2022-12-29', 'LAP003', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -293,6 +338,12 @@ ALTER TABLE `tbl_penyewa`
   ADD PRIMARY KEY (`kd_penyewa`);
 
 --
+-- Indexes for table `tbl_penyewaan`
+--
+ALTER TABLE `tbl_penyewaan`
+  ADD PRIMARY KEY (`kd_penyewaan`);
+
+--
 -- Indexes for table `tbl_perusahaan`
 --
 ALTER TABLE `tbl_perusahaan`
@@ -319,6 +370,12 @@ ALTER TABLE `tbl_judul`
 --
 ALTER TABLE `tbl_logo`
   MODIFY `kd_logo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_penyewaan`
+--
+ALTER TABLE `tbl_penyewaan`
+  MODIFY `kd_penyewaan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `tbl_perusahaan`

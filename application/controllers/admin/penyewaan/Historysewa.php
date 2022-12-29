@@ -38,6 +38,8 @@ class Historysewa extends CI_Controller
   {
     // $tgl_penyewaan = $this->session->userdata('tgl_penyewaan');
     $kd_penyewa = $this->session->userdata('kd_penyewa');
+    $data['nama_penyewa'] = $this->db->query("select nama_penyewa from tbl_penyewa where kd_penyewa='$kd_penyewa'")->row()->nama_penyewa;
+    $data['alamat_penyewa'] = $this->db->query("select alamat_penyewa from tbl_penyewa where kd_penyewa='$kd_penyewa'")->row()->alamat_penyewa;
     // $kd_admin = $this->session->userdata('kd_admin');
     // $cari = $this->db->query("select * from tbl_penyewaan where tgl_penyewaan='$tgl_penyewaan' and kd_lapangan='$kd_lapangan' and kd_jam='JAM001'")->num_rows();
     $data['x1'] = 'Data penyewaan';
