@@ -110,50 +110,18 @@ class Penyewaanok extends CI_Controller
       redirect(base_url('admin/penyewaan/penyewaan/'));
     }
   }
-  function hapuspenyewaan()
-  {
-    $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
-    $this->Mglobal->hapusdata($where, 'tbl_penyewaan');
-    $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Hapus Data Sukses!</strong> Data berhasil dihapus dari database.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>');
-    redirect(base_url('admin/penyewaan/penyewaan/'));
-  }
-  function editpenyewaan($id)
-  {
-    $data['x1'] = 'penyewaan';
-    $data['x2'] = 'penyewaan';
-    $data['x3'] = 'Edit penyewaan Inventaris';
-    $data['x4'] = 'Mengedit Data penyewaan Inventaris Sahabat Optik';
-    $where = array('kd_penyewaan' => $id);
-    $data['penyewaan'] = $this->Mglobal->tampilkandatasingle('tbl_penyewaan', $where);
-    $this->load->view('adm/header');
-    $this->load->view('adm/sidebar');
-    $this->load->view('adm/penyewaan/penyewaan/veditpenyewaan', $data);
-    $this->load->view('adm/footer');
-  }
-  function aksieditpenyewaan()
-  {
 
-    //Form Validasi jika kosong
-    //  $this->form_validation->set_rules('nama_penyewaan', 'Nama penyewaan', 'required');
-    //  $this->form_validation->set_rules('username_penyewaan', 'Username penyewaan', 'required');
-    //   $this->form_validation->set_rules('password_penyewaan', 'Password penyewaan', 'required');
-    //  if($this->form_validation->run()!=false)
-    //  {
-    // $config['upload_path'] = './assets/toko/images/penyewaan/';
-    // $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
-    // $config['max_size'] = '2048';
-    // $config['file_name'] = 'foto_penyewaan_' . time();
-    // $this->load->library('upload', $config);
-    // if ($this->upload->do_upload('foto_penyewaan')) {
-    // $image = $this->upload->data();
+
+  function aksihapuspenyewaan()
+  {
     $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
     $data = array(
-      'nama_penyewaan' => $this->input->post('nama_penyewaan'),
+      'kd_penyewa' => '',
+      'status_penyewaan' => 'kosong',
+      'status_penyewaan' => '0000-00-00 00:00:00',
+      'pembayaran_sewa' => '',
+      // 'status_penyewaan' => 'kosong',
+      // 'status_penyewaan' => 'kosong',
 
 
 
@@ -168,30 +136,6 @@ class Penyewaanok extends CI_Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/penyewaan/penyewaan/'));
-    //  }
-    //  else {
-
-    //    $this->load->view('adm/header');
-    //    $this->load->view('adm/sidebar');
-    //    $this->load->view('adm/penyewaan/penyewaan/vtambahpenyewaan');
-    //    $this->load->view('adm/footer');
-    //  }
-    // } else {
-    //   $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
-    //   $data = array(
-    //     'nama_penyewaan' => $this->input->post('nama_penyewaan'),
-    //     //'foto_penyewaan' => $image['file_name'],
-    //     //  'password_penyewaan'=>md5($this->input->post('password_penyewaan'))
-    //   );
-    //   $this->Mglobal->editdata('tbl_penyewaan', $where, $data);
-    //   $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-    //         <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
-    //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    //           <span aria-hidden="true">&times;</span>
-    //         </button>
-    //       </div>');
-    //   redirect(base_url('admin/penyewaan/penyewaan/'));
-    // }
+    redirect(base_url('admin/penyewaan/penyewaanok/'));
   }
 }

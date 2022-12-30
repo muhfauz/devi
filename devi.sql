@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2022 at 10:53 AM
+-- Generation Time: Dec 30, 2022 at 10:34 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -233,29 +233,30 @@ CREATE TABLE `tbl_penyewaan` (
   `harga_sewa` double NOT NULL,
   `pembayaran_sewa` varchar(20) NOT NULL,
   `jumlah_bayar` int(11) NOT NULL,
-  `bukti_bayar` varchar(100) NOT NULL
+  `bukti_bayar` varchar(100) NOT NULL,
+  `rekening_bayar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_penyewaan`
 --
 
-INSERT INTO `tbl_penyewaan` (`kd_penyewaan`, `tgl_penyewaan`, `kd_lapangan`, `kd_jam`, `kd_penyewa`, `kd_admin`, `status_penyewaan`, `tgl_pesan`, `harga_sewa`, `pembayaran_sewa`, `jumlah_bayar`, `bukti_bayar`) VALUES
-(82, '2022-12-29', 'LAP001', 'JAM001', 'PEN001', 'ADM001', 'booking', '0000-00-00 00:00:00', 80000, 'Lunas 80000', 0, ''),
-(83, '2022-12-29', 'LAP001', 'JAM002', 'PEN001', 'ADM001', 'booking', '2022-12-29 06:11:17', 80000, 'DP 40000', 0, ''),
-(84, '2022-12-29', 'LAP001', 'JAM003', 'PEN001', 'ADM001', 'booking', '2022-12-29 07:56:23', 80000, 'Lunas 80000', 0, ''),
-(85, '2022-12-29', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(86, '2022-12-29', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(89, '2022-12-29', 'LAP002', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(90, '2022-12-29', 'LAP002', 'JAM002', 'PEN001', 'ADM001', 'booking', '2022-12-29 04:39:55', 80000, 'Lunas 80000', 0, ''),
-(91, '2022-12-29', 'LAP002', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(92, '2022-12-29', 'LAP002', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(93, '2022-12-29', 'LAP002', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(96, '2022-12-29', 'LAP003', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(97, '2022-12-29', 'LAP003', 'JAM002', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(98, '2022-12-29', 'LAP003', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(99, '2022-12-29', 'LAP003', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, ''),
-(100, '2022-12-29', 'LAP003', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '');
+INSERT INTO `tbl_penyewaan` (`kd_penyewaan`, `tgl_penyewaan`, `kd_lapangan`, `kd_jam`, `kd_penyewa`, `kd_admin`, `status_penyewaan`, `tgl_pesan`, `harga_sewa`, `pembayaran_sewa`, `jumlah_bayar`, `bukti_bayar`, `rekening_bayar`) VALUES
+(124, '2022-12-30', 'LAP001', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(125, '2022-12-30', 'LAP001', 'JAM002', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(126, '2022-12-30', 'LAP001', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(127, '2022-12-30', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(128, '2022-12-30', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(131, '2022-12-31', 'LAP001', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(132, '2022-12-31', 'LAP001', 'JAM002', 'PEN001', 'ADM001', 'lunas', '2022-12-30 04:13:48', 80000, 'DP 40000', 40000, 'buktibayar_1672391652.png', 'BNI No  0372001567 a/n Sutrisno'),
+(133, '2022-12-31', 'LAP001', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(134, '2022-12-31', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(135, '2022-12-31', 'LAP001', 'JAM005', 'PEN001', 'ADM001', 'selesai', '2022-12-30 04:07:33', 80000, 'Lunas 80000', 80000, 'buktibayar_1672391403.png', 'BCA No  0460878136 a/n Sutrisno'),
+(138, '2023-01-01', 'LAP001', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(139, '2023-01-01', 'LAP001', 'JAM002', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(140, '2023-01-01', 'LAP001', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(141, '2023-01-01', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(142, '2023-01-01', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -284,6 +285,29 @@ CREATE TABLE `tbl_perusahaan` (
 
 INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `alamat_perush`, `tentang_perush`, `telepon_perush`, `email_perush`, `logob_perush`, `logok_perush`, `logo_depan`, `kd_pos`, `kab_perush`, `prop_perush`) VALUES
 (1, 'Lapangn Bola', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1639612646.png', '53444', 'purbalingga', 'Jawa Tengah');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_rekening`
+--
+
+CREATE TABLE `tbl_rekening` (
+  `kd_rekening` varchar(10) NOT NULL,
+  `nama_rekening` varchar(20) NOT NULL,
+  `nomor_rekening` varchar(20) NOT NULL,
+  `nama_bank` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_rekening`
+--
+
+INSERT INTO `tbl_rekening` (`kd_rekening`, `nama_rekening`, `nomor_rekening`, `nama_bank`) VALUES
+('REK001', 'Sutrisno', '0460878136', 'BCA'),
+('REK002', 'Sutrisno', '0372001567', 'BNI'),
+('REK003', 'Sutrisno', '007701022126536', 'BRI'),
+('REK004', 'Sutrisno', '139-00-1652600-0 ', 'Mandiri');
 
 --
 -- Indexes for dumped tables
@@ -350,6 +374,12 @@ ALTER TABLE `tbl_perusahaan`
   ADD PRIMARY KEY (`kd_perush`);
 
 --
+-- Indexes for table `tbl_rekening`
+--
+ALTER TABLE `tbl_rekening`
+  ADD PRIMARY KEY (`kd_rekening`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -375,7 +405,7 @@ ALTER TABLE `tbl_logo`
 -- AUTO_INCREMENT for table `tbl_penyewaan`
 --
 ALTER TABLE `tbl_penyewaan`
-  MODIFY `kd_penyewaan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `kd_penyewaan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `tbl_perusahaan`

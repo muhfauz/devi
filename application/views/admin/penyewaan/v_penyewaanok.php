@@ -67,9 +67,6 @@
                                     <button class="btn btn-info btn-sm mb-1"> <i class="fa fa-check mr-2"></i> <?php echo $a->status_penyewaan ?></button>
                                 </td>
 
-
-
-                                <!-- <td><img src="<?php echo base_url('assets/toko/images/penyewaan/') . $a->foto_penyewaan ?>" alt=""> -->
                                 </td>
                                 <td class="float-right">
                                     <?php if ($a->bukti_bayar == "" and $a->status_penyewaan == "booking") { ?>
@@ -96,98 +93,7 @@
 <!-- /.content-wrapper -->
 
 <!-- Modal -->
-<div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-aqua">
-                <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-futbol-o mr-2"></i> Form Tambah Data</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?php echo base_url('admin/penyewaan/penyewaan/aksitambahpenyewaan') ?>" method="post" enctype="multipart/form-data">
-                    <!-- <div class="form-group">
-                        <label for="">Kode penyewaan</label>
-                        <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewaan", "tbl_penyewaan", "LAP") ?>">
-                    </div> -->
-                    <div class="form-group">
-                        <label for="">Tanggal</label>
-                        <input name="tgl_penyewaan" type="date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Lapangan</label>
-                        <select name="kd_lapangan" class="form-control" required>
 
-                            <option value="">-- Pilih Lapangan --</option>
-                            <?php foreach ($lapangan as $l) : ?>
-                                <option value="<?php echo $l->kd_lapangan ?>"><?php echo $l->nama_lapangan ?></option>
-                            <?php endforeach ?>
-
-                        </select>
-
-                    </div>
-
-
-
-
-
-
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Simpan</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="hapussetting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-aqua">
-                <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-futbol-o mr-2"></i> Form Hapus Setting</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?php echo base_url('admin/penyewaan/penyewaan/aksihapussetting') ?>" method="post" enctype="multipart/form-data">
-                    <!-- <div class="form-group">
-                        <label for="">Kode penyewaan</label>
-                        <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_penyewaan", "tbl_penyewaan", "LAP") ?>">
-                    </div> -->
-                    <div class="form-group">
-                        <label for="">Tanggal</label>
-                        <input name="tgl_penyewaan" type="date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Lapangan</label>
-                        <select name="kd_lapangan" class="form-control" required>
-
-                            <option value="">-- Pilih Lapangan --</option>
-                            <?php foreach ($lapangan as $l) : ?>
-                                <option value="<?php echo $l->kd_lapangan ?>"><?php echo $l->nama_lapangan ?></option>
-                            <?php endforeach ?>
-
-                        </select>
-
-                    </div>
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Simpan</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 <?php foreach ($penyewaan as $a) : ?>
     <div class="modal fade" id="lihatbukti<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -237,3 +143,37 @@
         </div>
     </div>
 <?php endforeach ?>
+<!-- BATALKAN -->
+<?php foreach ($penyewaan as $a) : ?>
+
+
+    <div class="modal fade" id="hapusdata<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-bookmark-o mr-2"></i> Hapus Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/penyewaan/penyewaanok/aksihapuspenyewaan') ?>" method="post">
+                        <div class="form-group">
+                            Apakah Anda Yakin akan menghapus data ini ?
+                            <!-- <label for="">Nama</label>
+              <input name="nama_asal" type="text" class="form-control" value="<?php echo $a->nama_asal ?>" required> -->
+                            <input name="kd_asal" type="hidden" class="form-control" value="<?php echo $a->kd_penyewaan ?>" required>
+                        </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
