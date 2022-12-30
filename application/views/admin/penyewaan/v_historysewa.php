@@ -75,19 +75,24 @@
 
                                 </td>
                                 <td>
-                                    <?php if ($a->jumlah_bayar > 0) { ?>
+                                    <?php if ($a->jumlah_bayar > 0 and $a->status_penyewaan == "booking") { ?>
                                         <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
-                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Booking Lapangn</a>
+                                        <button href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking"> <i class="fa fa-check-square-o mr-1"></i> Sudah bayar, Admin Belum Cek</button>
+                                    <?php } elseif ($a->jumlah_bayar > 0 and $a->status_penyewaan == "lunas") { ?>
+                                        <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
+                                        <button href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking"> <i class="fa fa-check-square-o mr-1"></i> <?php echo $a->status_penyewaan ?></button>
+                                    <?php } elseif ($a->jumlah_bayar > 0 and $a->status_penyewaan == "selesai") { ?>
+                                        <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
+                                        <button href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking"> <i class="fa fa-check-square-o mr-1"></i> <?php echo $a->status_penyewaan ?></button>
                                     <?php } else { ?>
                                         <button class="btn btn-danger btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Hutang</button>
                                     <?php } ?>
                                 </td>
                                 <td>
-                                    <?php if ($a->jumlah_bayar > 0) { ?>
+                                    <?php if ($a->jumlah_bayar <= 0) { ?>
                                         <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
                                         <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Booking Lapangn</a>
-                                    <?php } else { ?>
-                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#booking<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Bayar DP/ Pelunasan</a>
+
                                     <?php } ?>
                                 </td>
                             </tr>
@@ -130,7 +135,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Pembayaran Dengan Transfer</label>
-                            <select name="kd_rekening" class="form-control" required>
+                            <select name="rekening_bayar" class="form-control" required>
                                 <option value="">-- Rekening Pembayaran --</option>
                                 <?php foreach ($rekening as $r) : ?>
                                     <option value="<?php echo $r->nama_bank . ' No  ' . $r->nomor_rekening . ' a/n ' . $r->nama_rekening ?>"><?php echo $r->nama_bank . ' No  ' . $r->nomor_rekening . ' a/n ' . $r->nama_rekening ?></option>

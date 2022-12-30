@@ -214,6 +214,53 @@ class Historysewa extends CI_Controller
   }
   function aksibayaruser()
   {
-    echo "string";
+    $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
+    $config['upload_path'] = './gambar/';
+    $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp|jfif';
+    $config['max_size'] = '20480000';
+    $config['file_name'] = 'buktibayar_' . time();
+    $this->load->library('upload', $config);
+    if ($this->upload->do_upload('bukti_bayar')) {
+      $image = $this->upload->data();
+      $data = array(
+        'jumlah_bayar' => $this->input->post('jumlah_bayar'),
+        'rekening_bayar' => $this->input->post('rekening_bayar'),
+        'bukti_bayar' => $image['file_name'],
+        //  'password_admin'=>md5($this->input->post('password_admin'))
+      );
+      $this->Mglobal->editdata('tbl_penyewaan', $where, $data);
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+      redirect(base_url('admin/penyewaan/historysewa'));
+      //  }
+      //  else {
+
+      //    $this->load->view('adm/header');
+      //    $this->load->view('adm/sidebar');
+      //    $this->load->view('adm/master/admin/vtambahadmin');
+      //    $this->load->view('adm/footer');
+      //  }
+    } else {
+      $data = array(
+        'jumlah_bayar' => $this->input->post('jumlah_bayar'),
+        'rekening_bayar' => $this->input->post('rekening_bayar'),
+        // 'bukti_bayar' => $image['file_name'],
+        // 'status_admin' => $this->input->post('status_admin'),
+        // 'gambar_admin' => $image['file_name'],
+        //  'password_admin'=>md5($this->input->post('password_admin'))
+      );
+      $this->Mglobal->editdata('tbl_admin', $where, $data);
+      $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+      redirect(base_url('admin/penyewaan/historysewa'));
+    }
   }
 }
