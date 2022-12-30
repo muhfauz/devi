@@ -212,4 +212,8 @@ class Historysewa extends CI_Controller
     //   redirect(base_url('admin/penyewaan/penyewaan/'));
     // }
   }
+  function aksibayaruser()
+  {
+    echo "string";
+  }
 }

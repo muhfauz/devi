@@ -103,7 +103,6 @@
 
 <!-- Modal -->
 <?php foreach ($penyewaan as $a) : ?>
-
     <div class="modal fade" id="booking<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -114,24 +113,82 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/penyewaan/sewauser/aksisewauser') ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url('admin/penyewaan/historysewa/aksibayaruser') ?>" method="post" enctype="multipart/form-data">
+
                         <div class="form-group">
-                            <label for="">Kode penyewaan</label>
-                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->kd_penyewaan ?>">
+                            <label for="">Nama Lapangan</label>
+                            <input name="kd_penyewaan" type="hidden" class="form-control" readonly value="<?php echo $a->kd_penyewaan ?>">
+                            <input name="" type="text" class="form-control" readonly value="<?php echo $a->nama_lapangan . ' Jam ' . $a->jam ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Jenis Bayar</label>
+                            <input name="" type="text" class="form-control" readonly value="<?php echo $a->pembayaran_sewa ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Jumlah Bayar</label>
+                            <input name="jumlah_bayar" type="number" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="">Pembayaran Dengan Transfer</label>
-                            <select name="pembayaran_sewa" class="form-control" required>
-                                <option value="">-- Pilih Pembayaran --</option>
-                                <option value="Lunas <?php echo $a->harga_sewa ?>">Lunas <?php echo $a->harga_sewa ?></option>
-                                <option value="DP <?php echo $a->harga_sewa / 2 ?>">DP 50% [ <?php echo $a->harga_sewa / 2 ?>]</option>
-
+                            <select name="kd_rekening" class="form-control" required>
+                                <option value="">-- Rekening Pembayaran --</option>
+                                <?php foreach ($rekening as $r) : ?>
+                                    <option value="<?php echo $r->nama_bank . ' No  ' . $r->nomor_rekening . ' a/n ' . $r->nama_rekening ?>"><?php echo $r->nama_bank . ' No  ' . $r->nomor_rekening . ' a/n ' . $r->nama_rekening ?></option>
+                                <?php endforeach ?>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="">Bukti Bayar</label>
+                            <input name="bukti_bayar" type="file" class="form-control" required>
+                        </div>
+                </div>
+                <div class=" modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Booking</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach ?>
+
+
+<?php foreach ($penyewaan as $a) : ?>
+
+    <div class="modal fade" id="info<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-aqua">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-futbol-o mr-2"></i> Info Pembayaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="">Tanggal Sewa</label>
+                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->tgl_penyewaan ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nama Lapangan</label>
+                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->nama_lapangan . ' Jam ' . $a->jam ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Jenis Bayar</label>
+                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->pembayaran_sewa ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Rekening Bayar</label>
+                            <?php foreach ($rekening as $r) : ?>
+                                <input name="kd_penyewaan" type="text" class="form-control mb-1" readonly value="<?php echo $r->nama_bank . ' No  ' . $r->nomor_rekening . ' a/n ' . $r->nama_rekening ?>">
+                            <?php endforeach ?>
+                        </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Booking</button>
+                    <!-- <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Booking</button> -->
                 </div>
                 </form>
             </div>
@@ -182,46 +239,3 @@
         </div>
     </div>
 </div>
-
-<?php foreach ($penyewaan as $a) : ?>
-
-    <div class="modal fade" id="info<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-futbol-o mr-2"></i> Form Tambah Data</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="">Tanggal Sewa</label>
-                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->tgl_penyewaan ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Nama Lapangan</label>
-                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->nama_lapangan . ' Jam ' . $a->jam ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Jenis Bayar</label>
-                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->pembayaran_sewa ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Rekenig Bayar</label>
-                            <?php foreach ($rekening as $r) : ?>
-                                <input name="kd_penyewaan" type="text" class="form-control mb-1" readonly value="<?php echo $r->nama_bank . ' No  ' . $r->nomor_rekening . ' a/n ' . $r->nama_rekening ?>">
-                            <?php endforeach ?>
-                        </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Booking</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-<?php endforeach ?>
