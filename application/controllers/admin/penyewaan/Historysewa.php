@@ -13,26 +13,7 @@ class Historysewa extends CI_Controller
     //Codeigniter : Write Less Do More
   }
 
-  function pindah()
-  {
-    $tgl_penyewaan = $this->input->post('tgl_penyewaan');
-    $tgl_sekarang = date('Y-m-d');
-    if ($tgl_penyewaan < $tgl_sekarang) {
-      $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Transaksi Gagal!</strong> Tanggal yang Anda pilih lebih kecil dari tanggal sekarang.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>');
-      redirect(base_url('admin/penyewaan/sewauser/pilih'));
-    } else {
-      $kd_lapangan = $this->input->post('kd_lapangan');
-      $nama_lapangan = $this->db->query("select nama_lapangan from tbl_lapangan where kd_lapangan='$kd_lapangan'")->row()->nama_lapangan;
-      $session = array('tgl_penyewaan' => $tgl_penyewaan, 'kd_lapangan' => $kd_lapangan, 'nama_lapangan' => $nama_lapangan);
-      $this->session->set_userdata($session);
-      redirect(base_url('admin/penyewaan/sewauser/'));
-    }
-  }
+
 
   function index()
   {
