@@ -234,7 +234,7 @@ class Historysewa extends CI_Controller
         // 'gambar_admin' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
       );
-      $this->Mglobal->editdata('tbl_admin', $where, $data);
+      $this->Mglobal->editdata('tbl_penyewaan', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

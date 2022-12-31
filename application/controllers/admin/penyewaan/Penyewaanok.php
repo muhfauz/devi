@@ -111,18 +111,16 @@ class Penyewaanok extends CI_Controller
     }
   }
 
-
   function aksihapuspenyewaan()
   {
     $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
     $data = array(
       'kd_penyewa' => '',
       'status_penyewaan' => 'kosong',
-      'status_penyewaan' => '0000-00-00 00:00:00',
+      'tgl_pesan' => '0000-00-00 00:00:00',
       'pembayaran_sewa' => '',
       // 'status_penyewaan' => 'kosong',
       // 'status_penyewaan' => 'kosong',
-
 
 
       // 'ket_penyewaan' => $this->input->post('ket_penyewaan'),
@@ -131,7 +129,81 @@ class Penyewaanok extends CI_Controller
     );
     $this->Mglobal->editdata('tbl_penyewaan', $where, $data);
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
+            <strong>Hapus Penyewaan Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    redirect(base_url('admin/penyewaan/penyewaanok/'));
+  }
+  function aksitidakvalid()
+  {
+    $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
+    $data = array(
+      'jumlah_bayar' => '0',
+      'rekening_bayar' => "",
+      'bukti_bayar' => "",
+      // 'status_penyewaan' => 'kosong',
+      // 'status_penyewaan' => 'kosong',
+
+
+      // 'ket_penyewaan' => $this->input->post('ket_penyewaan'),
+      // 'foto_penyewaan' => $image['file_name'],
+      //  'password_penyewaan'=>md5($this->input->post('password_penyewaan'))
+    );
+    $this->Mglobal->editdata('tbl_penyewaan', $where, $data);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Hapus Pembayaran Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    redirect(base_url('admin/penyewaan/penyewaanok/'));
+  }
+  // aksilunaspembayaran
+  function aksilunaspembayaran()
+  {
+    $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
+    $data = array(
+      'status_penyewaan' => 'lunas',
+
+      // 'status_penyewaan' => 'kosong',
+      // 'status_penyewaan' => 'kosong',
+
+
+      // 'ket_penyewaan' => $this->input->post('ket_penyewaan'),
+      // 'foto_penyewaan' => $image['file_name'],
+      //  'password_penyewaan'=>md5($this->input->post('password_penyewaan'))
+    );
+    $this->Mglobal->editdata('tbl_penyewaan', $where, $data);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Hapus Pembayaran Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    redirect(base_url('admin/penyewaan/penyewaanok/'));
+  }
+  // aksihadir
+  function aksihadir()
+  {
+    $where = array('kd_penyewaan' => $this->input->post('kd_penyewaan'));
+    $data = array(
+      'status_penyewaan' => 'selesai',
+      'jumlah_bayar' => $this->input->post('harga_sewa'),
+
+
+      // 'status_penyewaan' => 'kosong',
+      // 'status_penyewaan' => 'kosong',
+
+
+      // 'ket_penyewaan' => $this->input->post('ket_penyewaan'),
+      // 'foto_penyewaan' => $image['file_name'],
+      //  'password_penyewaan'=>md5($this->input->post('password_penyewaan'))
+    );
+    $this->Mglobal->editdata('tbl_penyewaan', $where, $data);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Penyewa Sudah Hadir dan Lunas!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

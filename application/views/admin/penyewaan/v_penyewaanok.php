@@ -72,10 +72,10 @@
                                     <?php if ($a->bukti_bayar == "" and $a->status_penyewaan == "booking") { ?>
                                         <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
                                     <?php } elseif ($a->bukti_bayar <> "" and $a->status_penyewaan == "booking") { ?>
-                                        <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check mr-2"></i> Lunaskan</a>
-                                        <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-trash mr-2"></i> Tidak Valid</a>
+                                        <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#lunaspembayaran<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check mr-2"></i> Lunaskan</a>
+                                        <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#tidakvalid<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-trash mr-2"></i> Tidak Valid</a>
                                     <?php } elseif ($a->bukti_bayar <> "" and $a->status_penyewaan == "lunas") { ?>
-                                        <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check mr-2"></i>Hadirkan</a>
+                                        <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#aksihadir<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check mr-2"></i>Hadirkan</a>
 
                                     <?php } ?>
                                     <!-- <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-info mr-2"></i> Detail</a> -->
@@ -162,7 +162,110 @@
                             Apakah Anda Yakin akan menghapus data ini ?
                             <!-- <label for="">Nama</label>
               <input name="nama_asal" type="text" class="form-control" value="<?php echo $a->nama_asal ?>" required> -->
-                            <input name="kd_asal" type="hidden" class="form-control" value="<?php echo $a->kd_penyewaan ?>" required>
+                            <input name="kd_penyewaan" type="hidden" class="form-control" value="<?php echo $a->kd_penyewaan ?>" required>
+                        </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<?php foreach ($penyewaan as $a) : ?>
+
+
+    <div class="modal fade" id="tidakvalid<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-times-circle mr-2"></i> Pembayaran Tidak valid</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/penyewaan/penyewaanok/aksitidakvalid') ?>" method="post">
+                        <div class="form-group">
+                            Apakah Anda Yakin akan menghapus data ini ?
+                            <!-- <label for="">Nama</label>
+          <input name="nama_asal" type="text" class="form-control" value="<?php echo $a->nama_asal ?>" required> -->
+                            <input name="kd_penyewaan" type="hidden" class="form-control" value="<?php echo $a->kd_penyewaan ?>" required>
+                        </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+<!-- modal lunaskan -->
+<?php foreach ($penyewaan as $a) : ?>
+
+
+    <div class="modal fade" id="lunaspembayaran<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-check mr-2"></i> Pembayaran Valid</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/penyewaan/penyewaanok/aksilunaspembayaran') ?>" method="post">
+                        <div class="form-group">
+                            Apakah Anda Yakin bahwa pembayaran valid dan lunas ?
+                            <!-- <label for="">Nama</label>
+      <input name="nama_asal" type="text" class="form-control" value="<?php echo $a->nama_asal ?>" required> -->
+                            <input name="kd_penyewaan" type="hidden" class="form-control" value="<?php echo $a->kd_penyewaan ?>" required>
+                        </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+<!-- modal hadirkan -->
+<?php foreach ($penyewaan as $a) : ?>
+
+
+    <div class="modal fade" id="aksihadir<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-check mr-2"></i> Hadir Masuk dan Lunas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/penyewaan/penyewaanok/aksihadir') ?>" method="post">
+                        <div class="form-group">
+                            Apakah Anda Yakin bahwa Penyewa Hadir dan Pembayaran OK ?
+                            <!-- <label for="">Nama</label>
+  <input name="nama_asal" type="text" class="form-control" value="<?php echo $a->nama_asal ?>" required> -->
+                            <input name="kd_penyewaan" type="hidden" class="form-control" value="<?php echo $a->kd_penyewaan ?>" required>
+                            <input name="harga_sewa" type="hidden" class="form-control" value="<?php echo $a->harga_sewa ?>" required>
                         </div>
 
 
