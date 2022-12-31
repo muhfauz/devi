@@ -58,7 +58,9 @@
                                     <?php } elseif ($a->bukti_bayar <> "" and $a->status_penyewaan == "lunas") { ?>
                                         <!-- <a href="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#hapussetting"> <i class="fa fa-trash mr-2"></i> Hapus Data</a> -->
                                         <button href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#lihatbukti<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Sudah bayar, OK</button>
-                                    <?php } elseif ($a->bukti_bayar == "" and $a->status_penyewaan == "booking") { ?>
+                                    <?php } elseif ($a->bukti_bayar <> "" and $a->status_penyewaan == "selesai") { ?>
+                                        <button href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#lihatbukti<?php echo $a->kd_penyewaan ?>"> <i class="fa fa-check-square-o mr-1"></i> Sudah bayar, OK</button>
+                                    <?php } else { ?>
                                         <button href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#"> <i class="fa fa-check-square-o mr-1"></i>Belum Bayar</button>
                                     <?php } ?>
                                 </td>
