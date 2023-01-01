@@ -71,8 +71,10 @@
         </li>
         <li class="treeview"> <a href="#"> <i class="fa fa-file-pdf-o mr-2"></i><span>Laporan Penyewaan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/ladmin') ?>"> <i class="fa fa-history mr-1"></i>Laporan Admin</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewa') ?>"> <i class="fa fa-history mr-1"></i>Laporan Penyewa</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/ladmin') ?>"> <i class="fa fa-history mr-1"></i> Admin</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewa') ?>"> <i class="fa fa-history mr-1"></i> Penyewa</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewaan/pilih') ?>"> <i class="fa fa-history mr-1"></i> Penyewaan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewaanperiode') ?>"> <i class="fa fa-history mr-1"></i> Penyewaan Periode</a></li>
           </ul>
         </li>
 
