@@ -33,30 +33,33 @@ class Lpenyewaan extends CI_Controller
   {
     $tgl_penyewaan = $this->input->post('tgl_penyewaan');
     $tgl_sekarang = date('Y-m-d');
-    if ($tgl_penyewaan < $tgl_sekarang) {
-      $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Transaksi Gagal!</strong> Tanggal yang Anda pilih lebih kecil dari tanggal sekarang.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>');
-      redirect(base_url('admin/laporan/lpenyewaan/pilih'));
+
+    $kd_lapangan = $this->input->post('kd_lapangan');
+    if ($kd_lapangan == "all") {
+      $nama_lapangan = "Semua Lapangan";
     } else {
-      $kd_lapangan = $this->input->post('kd_lapangan');
       $nama_lapangan = $this->db->query("select nama_lapangan from tbl_lapangan where kd_lapangan='$kd_lapangan'")->row()->nama_lapangan;
-      $session = array('tgl_penyewaan' => $tgl_penyewaan, 'kd_lapangan' => $kd_lapangan, 'nama_lapangan' => $nama_lapangan);
-      $this->session->set_userdata($session);
-      redirect(base_url('admin/laporan/lpenyewaan/'));
     }
+    $session = array('tgl_penyewaan' => $tgl_penyewaan, 'kd_lapangan' => $kd_lapangan, 'nama_lapangan' => $nama_lapangan);
+    $this->session->set_userdata($session);
+    redirect(base_url('admin/laporan/lpenyewaan/'));
   }
 
   function index()
   {
+    $tgl_penyewaan = $this->session->userdata('tgl_penyewaan');
+    $kd_lapangan = $this->session->userdata('kd_lapangan');
     $data['x1'] = 'Data Penyewaan';
     $data['x2'] = 'Master';
     $data['x3'] = 'penyewa';
     $data['x4'] = 'Data penyewa ' . '| ' . $this->db->query('select nama_perush from tbl_perusahaan')->row()->nama_perush;
-    $data['penyewa'] = $this->db->query("select * from tbl_penyewa")->result();
+    if ($kd_lapangan == "all") {
+      $data['penyewaan'] = $this->db->query("select * from tbl_penyewaan P, tbl_lapangan L, tbl_jam J, tbl_penyewa S where P.kd_lapangan=L.kd_lapangan and P.kd_jam=J.kd_jam and P.kd_penyewa=S.kd_penyewa and P.tgl_penyewaan='$tgl_penyewaan'")->result();
+    } else {
+      $data['penyewaan'] = $this->db->query("select * from tbl_penyewaan P, tbl_lapangan L, tbl_jam J, tbl_penyewa S where P.kd_lapangan=L.kd_lapangan and P.kd_jam=J.kd_jam and P.kd_penyewa=S.kd_penyewa and P.kd_lapangan='$kd_lapangan' and P.tgl_penyewaan='$tgl_penyewaan'")->result();
+    }
+
+    // $data['penyewa'] = $this->db->query("select * from tbl_penyewa")->result();
 
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
@@ -64,15 +67,22 @@ class Lpenyewaan extends CI_Controller
     $this->load->view('admin/laporan/penyewaan/v_lpenyewaan');
     $this->load->view('admin/temp/v_footer');
   }
-  function laporan_pdf_penyewa()
+  function laporan_pdf_penyewaan()
   {
     $this->load->library('pdf');
+    $tgl_penyewaan = $this->session->userdata('tgl_penyewaan');
+    $kd_lapangan = $this->session->userdata('kd_lapangan');
 
-    $data['penyewa'] = $this->Mglobal->tampilkandata('tbl_penyewa');
+    // $data['penyewa'] = $this->Mglobal->tampilkandata('tbl_penyewa');
     $data['perush'] = $this->Mglobal->tampilkandata('tbl_perusahaan');
+    if ($kd_lapangan == "all") {
+      $data['penyewaan'] = $this->db->query("select * from tbl_penyewaan P, tbl_lapangan L, tbl_jam J, tbl_penyewa S where P.kd_lapangan=L.kd_lapangan and P.kd_jam=J.kd_jam and P.kd_penyewa=S.kd_penyewa and P.tgl_penyewaan='$tgl_penyewaan'")->result();
+    } else {
+      $data['penyewaan'] = $this->db->query("select * from tbl_penyewaan P, tbl_lapangan L, tbl_jam J, tbl_penyewa S where P.kd_lapangan=L.kd_lapangan and P.kd_jam=J.kd_jam and P.kd_penyewa=S.kd_penyewa and P.kd_lapangan='$kd_lapangan' and P.tgl_penyewaan='$tgl_penyewaan'")->result();
+    }
     $this->pdf->setPaper('A4', 'landscape');
     $this->pdf->filename = "laporanpenyewa.pdf";
-    $this->pdf->load_view('admin/laporan/penyewa/vlaporanpdfpenyewa', $data);
+    $this->pdf->load_view('admin/laporan/penyewaan/vlaporanpdfpenyewaan', $data);
     // nama file pdf yang di hasilkan
   }
   function detailpenyewa($id)
