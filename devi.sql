@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2022 at 10:34 AM
+-- Generation Time: Jan 01, 2023 at 04:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -242,21 +242,16 @@ CREATE TABLE `tbl_penyewaan` (
 --
 
 INSERT INTO `tbl_penyewaan` (`kd_penyewaan`, `tgl_penyewaan`, `kd_lapangan`, `kd_jam`, `kd_penyewa`, `kd_admin`, `status_penyewaan`, `tgl_pesan`, `harga_sewa`, `pembayaran_sewa`, `jumlah_bayar`, `bukti_bayar`, `rekening_bayar`) VALUES
-(124, '2022-12-30', 'LAP001', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(125, '2022-12-30', 'LAP001', 'JAM002', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(126, '2022-12-30', 'LAP001', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(127, '2022-12-30', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(128, '2022-12-30', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(131, '2022-12-31', 'LAP001', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(132, '2022-12-31', 'LAP001', 'JAM002', 'PEN001', 'ADM001', 'lunas', '2022-12-30 04:13:48', 80000, 'DP 40000', 40000, 'buktibayar_1672391652.png', 'BNI No  0372001567 a/n Sutrisno'),
-(133, '2022-12-31', 'LAP001', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(134, '2022-12-31', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(135, '2022-12-31', 'LAP001', 'JAM005', 'PEN001', 'ADM001', 'selesai', '2022-12-30 04:07:33', 80000, 'Lunas 80000', 80000, 'buktibayar_1672391403.png', 'BCA No  0460878136 a/n Sutrisno'),
-(138, '2023-01-01', 'LAP001', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(139, '2023-01-01', 'LAP001', 'JAM002', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(140, '2023-01-01', 'LAP001', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(141, '2023-01-01', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
-(142, '2023-01-01', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', '');
+(150, '2022-12-31', 'LAP001', 'JAM001', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(151, '2022-12-31', 'LAP001', 'JAM002', 'PEN001', 'ADM001', 'selesai', '2022-12-31 06:22:56', 80000, 'Lunas 80000', 80000, 'buktibayar_1672444817.png', 'BNI No  0372001567 a/n Sutrisno'),
+(152, '2022-12-31', 'LAP001', 'JAM003', 'PEN001', 'ADM001', 'selesai', '2022-12-31 07:14:55', 80000, 'DP 40000', 80000, 'buktibayar_1672445724.png', 'BCA No  0460878136 a/n Sutrisno'),
+(153, '2022-12-31', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(154, '2022-12-31', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(155, '2023-01-01', 'LAP001', 'JAM001', 'PEN001', 'ADM001', 'booking', '2023-01-01 10:30:52', 80000, 'Lunas 80000', 0, '', ''),
+(156, '2023-01-01', 'LAP001', 'JAM002', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(157, '2023-01-01', 'LAP001', 'JAM003', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(158, '2023-01-01', 'LAP001', 'JAM004', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', ''),
+(159, '2023-01-01', 'LAP001', 'JAM005', '', 'ADM001', 'kosong', '0000-00-00 00:00:00', 80000, '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -308,6 +303,24 @@ INSERT INTO `tbl_rekening` (`kd_rekening`, `nama_rekening`, `nomor_rekening`, `n
 ('REK002', 'Sutrisno', '0372001567', 'BNI'),
 ('REK003', 'Sutrisno', '007701022126536', 'BRI'),
 ('REK004', 'Sutrisno', '139-00-1652600-0 ', 'Mandiri');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_terlambat`
+--
+
+CREATE TABLE `tbl_terlambat` (
+  `kd_terlambat` varchar(10) NOT NULL,
+  `terlambat` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_terlambat`
+--
+
+INSERT INTO `tbl_terlambat` (`kd_terlambat`, `terlambat`) VALUES
+('TER001', 1);
 
 --
 -- Indexes for dumped tables
@@ -380,6 +393,12 @@ ALTER TABLE `tbl_rekening`
   ADD PRIMARY KEY (`kd_rekening`);
 
 --
+-- Indexes for table `tbl_terlambat`
+--
+ALTER TABLE `tbl_terlambat`
+  ADD PRIMARY KEY (`kd_terlambat`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -405,7 +424,7 @@ ALTER TABLE `tbl_logo`
 -- AUTO_INCREMENT for table `tbl_penyewaan`
 --
 ALTER TABLE `tbl_penyewaan`
-  MODIFY `kd_penyewaan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+  MODIFY `kd_penyewaan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT for table `tbl_perusahaan`

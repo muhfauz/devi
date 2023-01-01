@@ -85,3 +85,46 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<?php foreach ($penyewaan as $a) :  ?>
+    <div class="modal fade" id="booking<?php echo $a->kd_penyewaan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-aqua">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-futbol-o mr-2"></i> Form Hapus Setting</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/penyewaan/sewauser/aksisewauser') ?>" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="">Kode penyewaan</label>
+                            <input name="kd_penyewaan" type="text" class="form-control" readonly value="<?php echo $a->kd_penyewaan ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Pembayaran Sewa</label>
+                            <select name="pembayaran_sewa" class="form-control" required>
+
+                                <option value="">-- Pilih Metode Pembayaran --</option>
+                                <option value="Lunas <?php echo $a->harga_sewa ?>">Lunas <?php echo $a->harga_sewa ?></option>
+                                <option value="DP <?php echo $a->harga_sewa / 2 ?>">DP 50% <?php echo $a->harga_sewa / 2 ?></option>
+
+
+
+
+                            </select>
+
+                        </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Simpan</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>

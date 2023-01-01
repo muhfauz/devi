@@ -74,7 +74,7 @@
             <li class="ml-4"><a href="<?php echo base_url('admin/laporan/ladmin') ?>"> <i class="fa fa-history mr-1"></i> Admin</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewa') ?>"> <i class="fa fa-history mr-1"></i> Penyewa</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewaan/pilih') ?>"> <i class="fa fa-history mr-1"></i> Penyewaan</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewaanperiode') ?>"> <i class="fa fa-history mr-1"></i> Penyewaan Periode</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/laporan/lpenyewaanperiode/pilih') ?>"> <i class="fa fa-history mr-1"></i> Penyewaan Periode</a></li>
           </ul>
         </li>
 
