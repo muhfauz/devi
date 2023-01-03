@@ -70,71 +70,7 @@
       </div>
       <!-- /.row -->
       <!-- Main row -->
-    <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-      <div class="row">
 
-        <!-- /.col -->
-
-        <!-- /.col -->
-
-
-        <div class="col-lg-3 col-xs-6">
-
-
-          <a href="<?php echo base_url('admin/pengaturan/datadiri') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-blue"><i class="fa fa-user text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number "> Data Diri</span> <span class="info-box-text">Data Diri Saya</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-
-        <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/transaksi/service/') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-info"><i class="fa fa-wpexplorer text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-bo-number"> Input Service </span> <span class="info-box-text">Lihat</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-        <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/seleksi/seleksihrd/arsiservice') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Arsip</span> <span class="info-box-text">Service</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-        <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/pengaturan/gantipassadmin') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-
-        <!-- /.col -->
-
-        <!-- /.col -->
-
-        <!-- /.col -->
-      </div>
-
-
-
-      <!-- keuangan -->
-
-
-
-      <!-- pajak -->
-
-
-      <!-- penjualan -->
 
     <?php } else { ?>
 
@@ -160,27 +96,27 @@
         </div>
 
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/transaksi/penjualan/') ?>">
+          <a href="<?php echo base_url('admin/penyewaan/sewauser/pilih') ?>">
             <div class="info-box"> <span class="info-box-icon bg-info"><i class="fa fa-wpexplorer text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Input Penjualan</span> <span class="info-box-text">Lihat</span></div>
+              <div class="info-box-content"> <span class="info-box-number"> Sewa</span> <span class="info-box-text">Lihat</span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
           </a>
         </div>
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/seleksi/seleksipelamar/arsippelamar') ?>">
+          <a href="<?php echo base_url('admin/penyewaan/historysewa') ?>">
             <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Arsipku</span> <span class="info-box-text">Lihat</span></div>
+              <div class="info-box-content"> <span class="info-box-number"> History Sewa</span> <span class="info-box-text">Lihat</span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
           </a>
         </div>
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/pengaturan/gantipassadmin') ?>">
+          <a href="<?php echo base_url('admin/pengaturan/gantipasspenyewa') ?>">
             <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
+              <div class="info-box-content"> <span class="info-box-number"> Ganti </span> <span class="info-box-text">Password</span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
