@@ -42,7 +42,7 @@
                                 <td><?php echo $a->atas_slider ?></td>
                                 <td><?php echo $a->tengah_slider ?></td>
                                 <td><?php echo $a->bawah_slider ?></td>
-                                <td><img class="img-fluid" width="300" height="100" src="<?php echo base_url('assets/depan/images/') . $a->gambar_slider ?>" alt="">
+                                <td><img class="img-fluid" width="300" height="100" src="<?php echo base_url('gambar/') . $a->gambar_slider ?>" alt="">
                                 </td>
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_slider ?>"> <i class="fa fa-plus-square mr-2"></i> Detail</a>
@@ -129,7 +129,7 @@
                         <tr>
                             <th>Foto slider</th>
                             <td>
-                                <img width="300" height="100" src="<?php echo base_url('assets/depan/images/') . $a->gambar_slider ?>" alt="">
+                                <img width="300" height="100" src="<?php echo base_url('gambar/') . $a->gambar_slider ?>" alt="">
                                 <span class="text-danger">Ukuran gambar untuk tampilan terbaik 1920 x 960 </span>
                             </td>
                         </tr>
@@ -216,7 +216,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Foto slider</label>
-                            <img class="form-control img-fluid mb-1" src="<?php echo base_url('assets/depan/images/') . $a->gambar_slider ?>" alt="">
+                            <img class="form-control img-fluid mb-1" src="<?php echo base_url('gambar/') . $a->gambar_slider ?>" alt="">
                             <input name="gambar_slider" type="file" class="form-control" value="<?php echo $a->gambar_slider ?>">
                             <span class="text-red font-italic text-sm-left">Gambar harus berukuran 1920 x 960 px untuk tampilan terbaik dan maksimal 2 MB</span>
                         </div>

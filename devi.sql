@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2023 at 04:53 AM
+-- Generation Time: Jan 04, 2023 at 01:20 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -213,7 +213,10 @@ CREATE TABLE `tbl_penyewa` (
 
 INSERT INTO `tbl_penyewa` (`kd_penyewa`, `nama_penyewa`, `tempatlahir_penyewa`, `tgllahir_penyewa`, `jk_penyewa`, `alamat_penyewa`, `nohp_penyewa`, `gambar_penyewa`, `password_penyewa`) VALUES
 ('PEN001', 'Sutrisno', 'aaaa', '2022-12-16', 'Pria', 'Dawuhan Wetan', '082135644333', 'adm_1657406829.png', 'e10adc3949ba59abbe56e057f20f883e'),
-('PEN002', 'aaa', 'bbb', '2022-12-24', 'Wanita', 'aaaa', '12222222', 'foto_penyewa.png', 'e10adc3949ba59abbe56e057f20f883e');
+('PEN002', 'aaa', 'bbb', '2022-12-24', 'Wanita', 'aaaa', '12222222', 'foto_penyewa.png', 'e10adc3949ba59abbe56e057f20f883e'),
+('PEN003', 'dsfaerr', 'ererere', '2023-01-02', 'Wanita', '343434', '343434', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a'),
+('PEN004', 'dererer', 'ererer', '2023-01-02', 'Pria', 'ererer', 'erererer', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a'),
+('PEN005', 'ererer', 'ererere', '2023-01-03', 'Pria', '3434343', '55555', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a');
 
 -- --------------------------------------------------------
 
@@ -279,7 +282,7 @@ CREATE TABLE `tbl_perusahaan` (
 --
 
 INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `alamat_perush`, `tentang_perush`, `telepon_perush`, `email_perush`, `logob_perush`, `logok_perush`, `logo_depan`, `kd_pos`, `kab_perush`, `prop_perush`) VALUES
-(1, 'Lapangn Bola', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1639612646.png', '53444', 'purbalingga', 'Jawa Tengah');
+(1, 'Lapangn Bola', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1672789090.png', '53444', 'purbalingga', 'Jawa Tengah');
 
 -- --------------------------------------------------------
 
@@ -303,6 +306,28 @@ INSERT INTO `tbl_rekening` (`kd_rekening`, `nama_rekening`, `nomor_rekening`, `n
 ('REK002', 'Sutrisno', '0372001567', 'BNI'),
 ('REK003', 'Sutrisno', '007701022126536', 'BRI'),
 ('REK004', 'Sutrisno', '139-00-1652600-0 ', 'Mandiri');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_slider`
+--
+
+CREATE TABLE `tbl_slider` (
+  `kd_slider` int(11) NOT NULL,
+  `atas_slider` varchar(30) NOT NULL,
+  `tengah_slider` varchar(20) NOT NULL,
+  `bawah_slider` varchar(20) NOT NULL,
+  `gambar_slider` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_slider`
+--
+
+INSERT INTO `tbl_slider` (`kd_slider`, `atas_slider`, `tengah_slider`, `bawah_slider`, `gambar_slider`) VALUES
+(1, 'Lapangan Bola Berkualitas', 'Tempat ', 'SANTRI BERKUALITAS', 'futsal.jpg'),
+(2, 'PERCAYAKAN MASA DEPAN', 'ANAK ', 'BERSAMA KAMI', 'futsal2.jpg');
 
 -- --------------------------------------------------------
 
@@ -393,6 +418,12 @@ ALTER TABLE `tbl_rekening`
   ADD PRIMARY KEY (`kd_rekening`);
 
 --
+-- Indexes for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  ADD PRIMARY KEY (`kd_slider`);
+
+--
 -- Indexes for table `tbl_terlambat`
 --
 ALTER TABLE `tbl_terlambat`
@@ -424,13 +455,19 @@ ALTER TABLE `tbl_logo`
 -- AUTO_INCREMENT for table `tbl_penyewaan`
 --
 ALTER TABLE `tbl_penyewaan`
-  MODIFY `kd_penyewaan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `kd_penyewaan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT for table `tbl_perusahaan`
 --
 ALTER TABLE `tbl_perusahaan`
   MODIFY `kd_perush` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  MODIFY `kd_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
