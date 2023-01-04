@@ -111,109 +111,24 @@
                 </div>
 
                 <div class="faq-layout" id="accordion">
+                    <?php foreach ($faq as $f) : ?>
+                        <div class="panel panel-default faq-box">
+                            <div class="panel-heading">
+                                <p class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><?php echo $f->tanya_faq ?></a>
+                                </p>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <?php echo $f->jawab_faq ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
 
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What Maintenance Should I be doing and when?</a>
-                            </p>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Talk to your veterinarian about how to care for your older pet and be prepared for possible age-related health issues. Senior pets require increased attention, including more frequent visits to the veterinarian, possible changes in diet, and in some cases alterations to their home environment.
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">How do I know when my car needs a tune up?</a>
-                            </p>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Talk to your veterinarian about how to care for your older pet and be prepared for possible age-related health issues. Senior pets require increased attention, including more frequent visits to the veterinarian, possible changes in diet, and in some cases alterations to their home environment.
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">How should I prepare my car for a road trip?</a>
-                            </p>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Talk to your veterinarian about how to care for your older pet and be prepared for possible age-related health issues. Senior pets require increased attention, including more frequent visits to the veterinarian, possible changes in diet, and in some cases alterations to their home environment.
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">What Maintenance Should I be doing and when?</a>
-                            </p>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                We all to some extent are on an End of Life journey. For some of our clients and their family additional care and help is required as they progress through this journey. Care on Call work closely with.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">How do I know when my car needs a tune up?</a>
-                            </p>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Talk to your veterinarian about how to care for your older pet and be prepared for possible age-related health issues. Senior pets require increased attention, including more frequent visits to the veterinarian, possible changes in diet, and in some cases alterations to their home environment.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">How should I prepare my car for a road trip?</a>
-                            </p>
-                        </div>
-                        <div id="collapseSix" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Talk to your veterinarian about how to care for your older pet and be prepared for possible age-related health issues. Senior pets require increased attention, including more frequent visits to the veterinarian, possible changes in diet, and in some cases alterations to their home environment.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">What Maintenance Should I be doing and when?</a>
-                            </p>
-                        </div>
-                        <div id="collapseSeven" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                We all to some extent are on an End of Life journey. For some of our clients and their family additional care and help is required as they progress through this journey. Care on Call work closely with.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default faq-box">
-                        <div class="panel-heading">
-                            <p class="panel-title">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">How do I know when my car needs a tune up?</a>
-                            </p>
-                        </div>
-                        <div id="collapseEight" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Talk to your veterinarian about how to care for your older pet and be prepared for possible age-related health issues. Senior pets require increased attention, including more frequent visits to the veterinarian, possible changes in diet, and in some cases alterations to their home environment.
-                            </div>
-                        </div>
-                    </div>
 
                 </div> <!-- end .col-md-6  -->
 
