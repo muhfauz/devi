@@ -57,7 +57,7 @@
 
                         </li>
                         <li>
-                            <a href="#" title="About Us">Tentang Kami</a>
+                            <a href="<?php echo base_url('depan/tentang') ?>" title="About Us">Tentang Kami</a>
                         </li>
 
 
@@ -69,7 +69,7 @@
                             </ul>
                         </li>
 
-                        <li><a href="contact.html">Hubungi Kami</a></li>
+                        <li><a href="<?php echo base_url('depan/kontak') ?>">Hubungi Kami</a></li>
                         <?php if ($this->session->userdata('status') == 'login') { ?>
                             <li><a href="<?php echo base_url('welcome') ?>" class="nav-btn-highlight">Beranda</a></li>
                             <li><a href="<?php echo base_url('login/logout') ?>" class="nav-btn-highlight">LogOut</a></li>
