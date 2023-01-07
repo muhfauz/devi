@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 01:20 AM
+-- Generation Time: Jan 07, 2023 at 02:13 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -75,6 +75,25 @@ INSERT INTO `tbl_bulan` (`kd_bulan`, `nama_bulan`) VALUES
 (10, 'Oktober'),
 (11, 'November'),
 (12, 'Desember');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_faq`
+--
+
+CREATE TABLE `tbl_faq` (
+  `kd_faq` int(11) NOT NULL,
+  `tanya_faq` varchar(100) NOT NULL,
+  `jawab_faq` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_faq`
+--
+
+INSERT INTO `tbl_faq` (`kd_faq`, `tanya_faq`, `jawab_faq`) VALUES
+(1, 'Bagaimana cara mendaftar ?', 'cara mendaftar adalah sebagai berikut');
 
 -- --------------------------------------------------------
 
@@ -216,7 +235,8 @@ INSERT INTO `tbl_penyewa` (`kd_penyewa`, `nama_penyewa`, `tempatlahir_penyewa`, 
 ('PEN002', 'aaa', 'bbb', '2022-12-24', 'Wanita', 'aaaa', '12222222', 'foto_penyewa.png', 'e10adc3949ba59abbe56e057f20f883e'),
 ('PEN003', 'dsfaerr', 'ererere', '2023-01-02', 'Wanita', '343434', '343434', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a'),
 ('PEN004', 'dererer', 'ererer', '2023-01-02', 'Pria', 'ererer', 'erererer', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a'),
-('PEN005', 'ererer', 'ererere', '2023-01-03', 'Pria', '3434343', '55555', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a');
+('PEN005', 'ererer', 'ererere', '2023-01-03', 'Pria', '3434343', '55555', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a'),
+('PEN006', 'aaaa', 'aaa', '2023-01-07', 'Wanita', 'aaa', 'aaa', 'foto_penyewa.png', '872622bacea6afdc9d6611efb38a433a');
 
 -- --------------------------------------------------------
 
@@ -332,6 +352,28 @@ INSERT INTO `tbl_slider` (`kd_slider`, `atas_slider`, `tengah_slider`, `bawah_sl
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_tentang`
+--
+
+CREATE TABLE `tbl_tentang` (
+  `kd_tentang` int(5) NOT NULL,
+  `judul_tentang` varchar(30) NOT NULL,
+  `isi_tentang` text NOT NULL,
+  `gambar_tentang` varchar(20) NOT NULL,
+  `url_tentang` varchar(100) NOT NULL,
+  `kd_admin` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_tentang`
+--
+
+INSERT INTO `tbl_tentang` (`kd_tentang`, `judul_tentang`, `isi_tentang`, `gambar_tentang`, `url_tentang`, `kd_admin`) VALUES
+(1, 'Tentang Kami', '<p><strong>Lapangan pertandingan sepak bola (juga dikenal sebagai football field atau lapangan hijau) adalah permukaan tanah lapang untuk pertandingan sepak bola yang umumnya berupa lapangan rumput alami atau rumput sintetis. Aturan mengenai bentuk dan ketentuan lebih lanjut tercantum dalam pasal pertama dari LOTG, &quot;The Field of Play&quot;.</strong></p>\r\n\r\n<p><strong>Semua wilayah di dalam garis lapangan pada lapangan adalah bagian dari area permainan. Pelanggaran yang dilakukan di bagian seluas 16,5 meter (18 yard) pada pertahanan tim (area penalti) dapat menghasilkan tendangan penalti. Oleh karena itu, bola harus benar-benar melewati garis lapangan untuk keluar dari area permainan, maka bola harus sepenuhnya telah melewati garis gawang (antara dua tiang gawang) saat gol disahkan; jika ada sebagian dari bola yang masih berada di garis gawang, bola tersebut masih dalam area permainan.[1]</strong></p>\r\n\r\n<p><strong>Meskipun sering dimaknai sebagai garis dalam antara kedua tiang gawang, garis gawang sebenarnya diukur dari kedua ujung lapangan, dari satu bendera sudut ke bendera yang lain. sedangkan, garis byline merujuk pada garis gawang di luar area gawang.[2]</strong></p>\r\n\r\n<p><strong>Sisi kanan dan kiri lapangan yang membatasi antara wilayah permainan dan wilayah luar disebut &quot;garis lapangan&quot; (panjang lapangan), sementara sisi lain (lebar lapangan) di area pertahanan disebut garis gawang. Panjang lapangan harus berukuran antara 90 hingga 120 meter (100 hingga 110 meter untuk pertandingan resmi tingkat internasional), dan lebar lapangan antara 45 hingga 90 meter (64 dan 75 meter untuk pertandingan resmi tingkat internasional) dan harus berbentuk persegi panjang. Semua garis harus memiliki luas yang sama dan tidak melebihi 12 cm (5 inchi). Keempat sudut lapangan harus dibatasi oleh bendera sudut. Lingkaran pusat adalah istilah lain untuk garis melingkar dengan jari-jari 9.5 m (10 yard) di tengah area lapangan.[3]</strong></p>\r\n\r\n<p><strong>Pada bulan Maret 2008, IFAB mencoba untuk mengadakan standardisasi ukuran lapangan sepak bola. Lapangan untuk pertandingan internasional disebut harus memiliki ukuran 105 x 68 meter. Akan tetapi, pada pertemuan khusus IFAB berikutnya disepakati bahwa penerapan standardisasi ini akan ditunda, menunggu penghitungan dan kesepakatan oleh seluruh anggota di tingkat internasional.[4]</strong></p>\r\n', 'adm_1673044502.jpg', 'https://www.youtube.com/watch?v=niDjf5g1Iro', 'ADM001');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_terlambat`
 --
 
@@ -362,6 +404,12 @@ ALTER TABLE `tbl_admin`
 --
 ALTER TABLE `tbl_bulan`
   ADD PRIMARY KEY (`kd_bulan`);
+
+--
+-- Indexes for table `tbl_faq`
+--
+ALTER TABLE `tbl_faq`
+  ADD PRIMARY KEY (`kd_faq`);
 
 --
 -- Indexes for table `tbl_jabatan`
@@ -424,6 +472,12 @@ ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`kd_slider`);
 
 --
+-- Indexes for table `tbl_tentang`
+--
+ALTER TABLE `tbl_tentang`
+  ADD PRIMARY KEY (`kd_tentang`);
+
+--
 -- Indexes for table `tbl_terlambat`
 --
 ALTER TABLE `tbl_terlambat`
@@ -438,6 +492,12 @@ ALTER TABLE `tbl_terlambat`
 --
 ALTER TABLE `tbl_bulan`
   MODIFY `kd_bulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tbl_faq`
+--
+ALTER TABLE `tbl_faq`
+  MODIFY `kd_faq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_judul`
@@ -468,6 +528,12 @@ ALTER TABLE `tbl_perusahaan`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `kd_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_tentang`
+--
+ALTER TABLE `tbl_tentang`
+  MODIFY `kd_tentang` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
