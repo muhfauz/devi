@@ -70,7 +70,7 @@ class Depan extends CI_Controller
         // $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_bidang B, tbl_perusahaan P where L.kd_bidang=B.kd_bidang and L.kd_perush=P.kd_perush")->result();
         // $data['bidang'] = $this->Mglobal->tampilkandata('tbl_bidang');
         $data['tentang'] = $this->Mglobal->tampilkandata('tbl_tentang');
-        $data['judul'] = 'Tentang Kami';
+        $data['judul'] = 'Hubungi Kami';
         // $data['kalimat'] = 'Isika Identitas Pendaftar';
         $this->load->view('depan/temp/v_head', $data);
         $this->load->view('depan/temp/v_header');

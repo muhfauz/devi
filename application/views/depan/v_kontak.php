@@ -10,11 +10,11 @@
 
 
                 <h3>
-                    Contact Us
+                    <?php echo $judul ?>
                 </h3>
 
                 <p class="page-breadcrumb">
-                    <a href="#">Home</a> / Contact
+                    <a href="<?php echo base_url('depan') ?>">Home</a> / <?php echo $judul ?>
                 </p>
 
 
@@ -35,7 +35,7 @@
         <div class="row">
 
             <div class="col-md-12">
-                <h2 class="contact-title">Contact us</h2>
+                <h2 class="contact-title"> <?php echo $judul ?></h2>
             </div>
 
             <div class="col-md-3">
@@ -43,7 +43,7 @@
                 <ul class="contact-info">
                     <li>
                         <span class="icon-container"><i class="fa fa-home"></i></span>
-                        <address>3100 C/A Mouchak,Sylhet,UK</address>
+                        <address> <?php echo $this->db->query("select * from tbl_perusahaan")->row()->alamat_perush ?></address>
                     </li>
                 </ul>
 
@@ -55,7 +55,7 @@
 
                     <li>
                         <span class="icon-container"><i class="fa fa-phone"></i></span>
-                        <address><a href="#">+093-120-525-9162</a></address>
+                        <address><a href="#"><?php echo $this->db->query("select * from tbl_perusahaan")->row()->telepon_perush ?></a></address>
                     </li>
 
                 </ul>
@@ -66,7 +66,7 @@
                 <ul class="contact-info">
                     <li>
                         <span class="icon-container"><i class="fa fa-envelope"></i></span>
-                        <address><a href="mailto:">query@yourdomain.com</a></address>
+                        <address><a href="mailto:"><?php echo $this->db->query("select * from tbl_perusahaan")->row()->email_perush ?></a></address>
                     </li>
                 </ul>
 
@@ -77,7 +77,7 @@
                 <ul class="contact-info">
                     <li>
                         <span class="icon-container"><i class="fa fa-globe"></i></span>
-                        <address><a href="#">www.yourdomain.com</a></address>
+                        <address><a href="<?php echo base_url('depan') ?>">bintangfutsaljamblang.site</a></address>
                     </li>
                 </ul>
 
