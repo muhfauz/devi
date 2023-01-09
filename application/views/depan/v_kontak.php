@@ -38,7 +38,7 @@
                 <h2 class="contact-title"> <?php echo $judul ?></h2>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-8">
 
                 <ul class="contact-info">
                     <li>
@@ -72,16 +72,7 @@
 
             </div>
 
-            <div class="col-md-3">
 
-                <ul class="contact-info">
-                    <li>
-                        <span class="icon-container"><i class="fa fa-globe"></i></span>
-                        <address><a href="<?php echo base_url('depan') ?>">bintangfutsaljamblang.site</a></address>
-                    </li>
-                </ul>
-
-            </div>
 
         </div>
 
@@ -96,51 +87,21 @@
 
         <div class="row">
 
-            <div class="col-sm-6 wow fadeInRight">
+            <div class="col-sm-12 wow fadeInCenter">
 
-                <h2 class="contact-title">Our Location</h2>
+                <h2 class="contact-title">Lokasi Kami</h2>
 
 
-                <div class="section-google-map-block wow fadeInUp">
+                <!-- <div class="section-google-map-block wow fadeInUp"> -->
 
-                    <div id="map_canvas"></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22415.65299095339!2d108.45159678001504!3d-6.700663903643436!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce6a267b0b764201!2sBintang%20Futsal!5e0!3m2!1sid!2sid!4v1673229333306!5m2!1sid!2sid" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-                </div> <!-- end .section-content-block  -->
 
-            </div> <!--  end col-sm-6  -->
 
-            <div class="col-sm-6 wow fadeInLeft">
-
-                <div class="contact-form-block">
-
-                    <h2 class="contact-title">Say Hello To Us</h2>
-
-                    <form role="form" action="#" method="post" id="contact-form">
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Name" data-msg="Please Write Your Name" />
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Email" data-msg="Please Write Your Valid Email" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="email_subject" name="email_subject" placeholder="Subject" data-msg="Please Write Your Message Subject" />
-                        </div>
-
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" name="email_message" id="email_message" placeholder="Message" data-msg="Please Write Your Message"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-theme">Send Now</button>
-                        </div>
-
-                    </form>
-
-                </div> <!-- end .contact-form-block  -->
 
             </div> <!--  end col-sm-6  -->
+
+
 
 
 
