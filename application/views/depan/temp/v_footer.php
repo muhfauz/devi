@@ -144,7 +144,7 @@
 
               <div class="row clearfix">
                   <div class="col-md-12 col-sm-12 text-center clearfix">
-                      <p class="copyright-text"> Copyright © 2017-2018. All Right Reserved - by xenioushk </p>
+                      <p class="copyright-text"> Copyright © 2023. <?php echo $this->db->query("select * from tbl_judul")->row()->judul ?> - by <?php echo $this->db->query("select * from tbl_judul")->row()->oleh ?> </p>
                   </div>
 
               </div>

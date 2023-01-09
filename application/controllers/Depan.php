@@ -78,6 +78,19 @@ class Depan extends CI_Controller
         $this->load->view('depan/v_kontak');
         $this->load->view('depan/temp/v_footer');
     }
+    public function faq()
+    {
+        // $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_bidang B, tbl_perusahaan P where L.kd_bidang=B.kd_bidang and L.kd_perush=P.kd_perush")->result();
+        // $data['bidang'] = $this->Mglobal->tampilkandata('tbl_bidang');
+        $data['faq'] = $this->Mglobal->tampilkandata('tbl_faq');
+        $data['judul'] = 'FAQ';
+        // $data['kalimat'] = 'Isika Identitas Pendaftar';
+        $this->load->view('depan/temp/v_head', $data);
+        $this->load->view('depan/temp/v_header');
+        // $this->load->view('depan/temp/v_navbar');
+        $this->load->view('depan/v_faq');
+        $this->load->view('depan/temp/v_footer');
+    }
 
     function aksidaftar()
     {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2023 at 02:13 AM
+-- Generation Time: Jan 09, 2023 at 09:37 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -302,7 +302,7 @@ CREATE TABLE `tbl_perusahaan` (
 --
 
 INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `alamat_perush`, `tentang_perush`, `telepon_perush`, `email_perush`, `logob_perush`, `logok_perush`, `logo_depan`, `kd_pos`, `kab_perush`, `prop_perush`) VALUES
-(1, 'Lapangn Bola', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1672789090.png', '53444', 'purbalingga', 'Jawa Tengah');
+(1, 'Lapangn Bola', 'Jl. Bakung-Jamblang No.16, Sitiwinangun, Kec. Jamblang, Kabupaten Cirebon, Jawa Barat 45156', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1673252727.png', 'gambar1673252746.png', 'logodepan1673253403.png', '53444', 'purbalingga', 'Jawa Tengah');
 
 -- --------------------------------------------------------
 

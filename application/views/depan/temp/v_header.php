@@ -59,15 +59,12 @@
                         <li>
                             <a href="<?php echo base_url('depan/tentang') ?>" title="About Us">Tentang Kami</a>
                         </li>
-
-
-                        <li class="drop">
-                            <a href="#">Blog</a>
-                            <ul class="drop-down">
-                                <li><a href="blog.html">All Posts</a></li>
-                                <li><a href="single.html">Single Page</a></li>
-                            </ul>
+                        <li>
+                            <a href="<?php echo base_url('depan/faq') ?>" title="About Us">FAQ</a>
                         </li>
+
+
+
 
                         <li><a href="<?php echo base_url('depan/kontak') ?>">Hubungi Kami</a></li>
                         <?php if ($this->session->userdata('status') == 'login') { ?>
