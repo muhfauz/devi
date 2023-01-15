@@ -39,9 +39,9 @@
                 <h4 class="heading-alt-style text-capitalize text-dark-color"> <?php echo $judul ?></h4>
                 <span class="heading-separator heading-separator-horizontal"></span>
                 <h2 class="subheading-alt-style">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur eu ante non ex lobortis posuere
+                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit curabitur eu ante non ex lobortis posuere -->
                     <br />
-                    volutpat nec orci morbi facilisis massa lectus volutpat posuere volutpat.
+                    <!-- volutpat nec orci morbi facilisis massa lectus volutpat posuere volutpat. -->
                 </h2>
             </div> <!-- end .col-sm-12  -->
 
@@ -81,24 +81,3 @@
 </section> <!--  end .faq-layout -->
 
 <!--  SECTION CTA 04 -->
-
-<section class="cta-layout-02 section-primary-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                <h2 class="text-light-color">
-                    Do you have any question? Feel free to contact.
-                </h2>
-                <p class="text-light-color">
-
-                    Become water safe as quickly as possible and learn to swim using
-                    proper stroke mechanics from the beginning.
-
-                </p>
-            </div> <!--  end .col-md-8  -->
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
-                <a class="btn btn-theme btn-square btn-theme-invert wow bounceIn" href="<?php echo base_url('depan/kontak') ?>">CONTACT WITH US</a>
-            </div> <!--  end .col-md-4  -->
-        </div> <!--  end .row  -->
-    </div>
-</section>

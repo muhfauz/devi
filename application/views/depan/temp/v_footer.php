@@ -103,19 +103,19 @@
                                   <ul class="opening-shedule">
                                       <li class="clearfix">
                                           <span> Sat - Tues : </span>
-                                          <div class="pull-right"> 6.00 AM - 10.00 PM</div>
+                                          <div class="pull-right"> <?php echo $this->db->query("select * from tbl_jam order by kd_jam asc limit 1")->row()->jam ?> AM - <?php echo $this->db->query("select * from tbl_jam order by kd_jam desc limit 1")->row()->jam ?> PM</div>
                                       </li>
                                       <li>
                                           <span> Wed - Thurs : </span>
-                                          <div class="pull-right"> 8.00 AM - 6.00 PM</div>
+                                          <div class="pull-right"> <?php echo $this->db->query("select * from tbl_jam order by kd_jam asc limit 1")->row()->jam ?> AM - <?php echo $this->db->query("select * from tbl_jam order by kd_jam desc limit 1")->row()->jam ?> PM</div>
                                       </li>
                                       <li>
                                           <span> Friday :</span>
-                                          <div class="pull-right"> 6.00 AM - 10.00 PM</div>
+                                          <div class="pull-right"> <?php echo $this->db->query("select * from tbl_jam order by kd_jam asc limit 1")->row()->jam ?> AM - <?php echo $this->db->query("select * from tbl_jam order by kd_jam desc limit 1")->row()->jam ?> PM</div>
                                       </li>
                                       <li>
                                           <span> Sunday :</span>
-                                          <div class="pull-right"> Closed</div>
+                                          <div class="pull-right"> <?php echo $this->db->query("select * from tbl_jam order by kd_jam asc limit 1")->row()->jam ?> AM - <?php echo $this->db->query("select * from tbl_jam order by kd_jam desc limit 1")->row()->jam ?> PM</div>
                                       </li>
                                   </ul>
 
