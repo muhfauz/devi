@@ -54,7 +54,7 @@
                               <div class="textwidget">
 
                                   <i class="fa fa-envelope-o fa-contact"></i>
-                                  <p><a href="#"><?php echo $this->db->query("select * from tbl_perusahaan")->row()->email_perush ?></a><br /><a href="#">helpmenow@swimes.com</a></p>
+                                  <p><a href="#"><?php echo $this->db->query("select * from tbl_perusahaan")->row()->email_perush ?></a></p>
 
                                   <i class="fa fa-location-arrow fa-contact"></i>
                                   <p><?php echo $this->db->query("select * from tbl_perusahaan")->row()->alamat_perush ?></p>
