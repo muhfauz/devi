@@ -93,8 +93,9 @@
 
 
                 <!-- <div class="section-google-map-block wow fadeInUp"> -->
+                <?php echo $this->db->query("select * from tbl_perusahaan")->row()->url_perush ?>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22415.65299095339!2d108.45159678001504!3d-6.700663903643436!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce6a267b0b764201!2sBintang%20Futsal!5e0!3m2!1sid!2sid!4v1673229333306!5m2!1sid!2sid" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22415.65299095339!2d108.45159678001504!3d-6.700663903643436!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xce6a267b0b764201!2sBintang%20Futsal!5e0!3m2!1sid!2sid!4v1673229333306!5m2!1sid!2sid" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
 
 

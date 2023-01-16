@@ -242,8 +242,10 @@
               <input name="email_perush" type="text" class="form-control" value="<?php echo $a->email_perush ?>" required>
             </div>
             <div class="form-group">
-              <label for="">Logo Besar</label>
-              <input name="logob_perush" type="text" class="form-control" value="<?php echo $a->logob_perush ?>" required>
+              <label for="">MAP </label>
+
+              <textarea name="url_perush" class="form-control" id="" cols="30" rows="10" required><?php echo $a->url_perush ?></textarea>
+
             </div>
 
 

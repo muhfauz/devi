@@ -40,6 +40,7 @@ class Perush extends CI_Controller
       'tentang_perush' => $this->input->post('tentang_perush'),
       'telepon_perush' => $this->input->post('telepon_perush'),
       'email_perush' => $this->input->post('email_perush'),
+      'url_perush' => $this->input->post('url_perush'),
       //  'password_admin'=>md5($this->input->post('password_admin'))
     );
     $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
