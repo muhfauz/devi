@@ -21,11 +21,11 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="top-bar-social square-layout text-dark-color text-right">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <!-- <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-google-plus"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
+                        <a href="#"><i class="fa fa-youtube"></i></a> -->
                     </div>
                 </div>
 
