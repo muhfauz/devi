@@ -53,9 +53,8 @@
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_penyewa ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_penyewa ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
-                                    <?php if ($this->session->userdata('posisi') == 'admin') { ?>
-                                        <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_penyewa ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
-                                    <?php } ?>
+                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_penyewa ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
+
 
                                 </td>
                             </tr>
